@@ -654,6 +654,7 @@ MonoBehaviour:
       - "...\uC5B4\uCA50\uC9C0 \uC544\uAE4C \uB4E4\uB9B0 \uC18C\uB9AC\uB97C\n\uB530\uB77C\uAC00\uC57C
         \uD55C\uB2E4\uB294 \uC0DD\uAC01\uC774 \uB4E0\uB2E4."
   reqSwitch: {fileID: 11400000, guid: 04dcf0c88496d4943887304dfa469d90, type: 2}
+  onSwitchAfterDlg: {fileID: 0}
 --- !u!61 &358647385
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -866,6 +867,7 @@ MonoBehaviour:
       - "\uC27D\uC9C0 \uC54A\uC740\uAC8C \uC544\uB2C8\uB77C\t"
       - "\uB108\uBB34 \uC5B4\uB824\uC6CC\uC694"
   reqSwitch: {fileID: 0}
+  onSwitchAfterDlg: {fileID: 0}
 --- !u!212 &415522689
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1624,6 +1626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundEffect: {fileID: 8300000, guid: 90e38a91c0ff73e4c8fcf9b4150130b8, type: 3}
+  reqSwitch: {fileID: 11400000, guid: 04dcf0c88496d4943887304dfa469d90, type: 2}
 --- !u!114 &792799645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1643,7 +1646,8 @@ MonoBehaviour:
       standingCG: {fileID: 0}
       sentences:
       - "\uC0AC\uC6A9\uAC10\uC774 \uBCF4\uC774\uB294 \uB0A1\uC740 \uB9E4\uD2B8\uB2E4."
-  reqSwitch: {fileID: 0}
+  reqSwitch: {fileID: 11400000, guid: 04dcf0c88496d4943887304dfa469d90, type: 2}
+  onSwitchAfterDlg: {fileID: 0}
 --- !u!61 &792799646
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2046,6 +2050,7 @@ MonoBehaviour:
         \uAC19\uB2E4."
       - "\uCCAD\uC18C\uAC00 \uC81C\uB300\uB85C \uB418\uC9C0 \uC54A\uC740\uAC78\uAE4C."
   reqSwitch: {fileID: 0}
+  onSwitchAfterDlg: {fileID: 11400000, guid: 04dcf0c88496d4943887304dfa469d90, type: 2}
 --- !u!114 &848185788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2061,7 +2066,7 @@ MonoBehaviour:
   doorOpen: {fileID: 8300000, guid: d190b986119982d4eb493dda919e76c4, type: 3}
   doorClose: {fileID: 8300000, guid: cffb02f000644814ea0cc69fd46e60a4, type: 3}
   whisperSound: {fileID: 8300000, guid: 5289b194651d35a4698ce2250d691e71, type: 3}
-  prologueEndSwitch: {fileID: 11400000, guid: 04dcf0c88496d4943887304dfa469d90, type: 2}
+  prologueEndSwitch: {fileID: 0}
 --- !u!1 &881242412
 GameObject:
   m_ObjectHideFlags: 0
@@ -3839,6 +3844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundEffect: {fileID: 8300000, guid: e7deebe0f58a892468ea3466d7d089ad, type: 3}
+  reqSwitch: {fileID: 0}
 --- !u!1 &1681578861
 GameObject:
   m_ObjectHideFlags: 0
@@ -4279,7 +4285,6 @@ GameObject:
   - component: {fileID: 1926906951}
   - component: {fileID: 1926906952}
   - component: {fileID: 1926906954}
-  - component: {fileID: 1926906953}
   - component: {fileID: 1926906955}
   m_Layer: 0
   m_Name: Trash
@@ -4352,28 +4357,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1926906953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1926906950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 795584dd890ee1c40a750d617d3be2b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    character:
-    - type: 0
-      choiceType: 0
-      standingCG: {fileID: 0}
-      sentences:
-      - "\uBD88\uC548\uD55C \uC608\uAC10\uC774 \uB4E4\uC5B4\uB9DE\uC558\uB2E4.\r\n\uD734\uC9C0\uD1B5\uB3C4
-        \uC5ED\uC2DC \uBE44\uC6CC\uC838 \uC788\uC9C0 \uC54A\uB2E4."
-      - "\uD734\uC9C0 \uC870\uAC01\uACFC \uBA38\uB9AC\uCE74\uB77D\uB4E4\u2026 \uAEBC\uB9BC\uCE59\uD558\uB2E4."
-  reqSwitch: {fileID: 0}
 --- !u!61 &1926906954
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4413,6 +4396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundEffect: {fileID: 8300000, guid: ee07e01ae0287334199d1689a1841c45, type: 3}
+  reqSwitch: {fileID: 11400000, guid: 04dcf0c88496d4943887304dfa469d90, type: 2}
 --- !u!1 &1929219379
 GameObject:
   m_ObjectHideFlags: 0
@@ -4664,6 +4648,7 @@ MonoBehaviour:
       - "...\uC774 \uC9D1\uC5D0 \uC0AC\uB78C\uC774 \uC544\uB2CC \uBB34\uC5B8\uAC00\uAC00
         \uC788\uB2E4."
   reqSwitch: {fileID: 0}
+  onSwitchAfterDlg: {fileID: 0}
 --- !u!1001 &1983773569
 PrefabInstance:
   m_ObjectHideFlags: 0

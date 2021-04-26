@@ -88,12 +88,15 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+    Switch onSwitchAfterDlg;
     //대화 시작시 호출
-    public void StartDialogue (Dialogue dialogue)
+    public void StartDialogue (Dialogue dialogue, Switch onSwitchAfterDlg)
     {
         //이미 대화를 하고 있는 경우가 아니라면
         if (!inConversation)
         {
+            //대사가 끝난 뒤 on될 스위치 설정
+            if (onSwitchAfterDlg != null) this.onSwitchAfterDlg = onSwitchAfterDlg;
             //대사 시작 전 초기화
             sentences.Clear();
 
@@ -318,6 +321,11 @@ public class DialogueManager : MonoBehaviour
         {
             for (int i = 0; i < buttons.Length; i++) buttons[i].enabled = true;
             for (int i = 0; i < itemPickups.Length; i++) itemPickups[i].enabled = true;
+        }
+        //대사 종료후 스위치 on
+        if(onSwitchAfterDlg != null)
+        {
+            onSwitchAfterDlg.setSwitchActive(true);
         }
 
     }
