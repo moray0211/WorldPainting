@@ -22,11 +22,12 @@ public class DialogueManager : MonoBehaviour
     public float typingSpeed;
     public AudioSource typingSound;
 
-    struct Types
+    struct Types //Dialogue.cs의 Sentences클래스와 동일한 구성
     {
         public Dialogue.Type type;
         public Dialogue.ChoiceType choiceType;
         public Sprite standingCG;
+        public AudioClip audioClip;
     }
 
     Queue<KeyValuePair<string, Types>> sentences;
@@ -109,6 +110,7 @@ public class DialogueManager : MonoBehaviour
                     tmp.type = dialogue.character[i].type;
                     tmp.choiceType = dialogue.character[i].choiceType;
                     tmp.standingCG = dialogue.character[i].standingCG;
+                    tmp.audioClip = dialogue.character[i].audioClip;
 
                     sentences.Enqueue(new KeyValuePair<string, Types>
                         (dialogue.character[i].sentences[j], tmp));
@@ -139,6 +141,7 @@ public class DialogueManager : MonoBehaviour
 
             Dialogue.ChoiceType choiceType = sentences.Peek().Value.choiceType;
             Dialogue.Type type = sentences.Peek().Value.type;
+            AudioClip audioClip = sentences.Peek().Value.audioClip;
 
             //캐릭터별 대화창 설정
             if (type == Dialogue.Type.narration) DialoguePanel.GetComponent<Image>().sprite = narration_box;
@@ -293,6 +296,10 @@ public class DialogueManager : MonoBehaviour
 
             //일반 대화일 경우
             //대화 진행
+
+            //SE 재생
+            if(audioClip != null) GameObject.Find("SEManager").GetComponent<SEManager>().playAudioClip(audioClip);
+            //대화창 설정
             if (type == Dialogue.Type.narration) DialoguePanel.GetComponent<Image>().sprite = narration_box;
             if (type == Dialogue.Type.magenta) DialoguePanel.GetComponent<Image>().sprite = magenta_box;
             if (type == Dialogue.Type.cyan) DialoguePanel.GetComponent<Image>().sprite = cyan_box;

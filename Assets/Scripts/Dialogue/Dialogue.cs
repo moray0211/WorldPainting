@@ -27,9 +27,10 @@ public class Dialogue
     [System.Serializable]
     public class Sentences
     {
-        public Type type;
-        public ChoiceType choiceType;
-        public Sprite standingCG;
+        public Type type; //어떤 인물의 대사인지Or선택지인지
+        public ChoiceType choiceType; //선택지 1,2,3 (기본은 선택지 아님)
+        public Sprite standingCG; //스탠딩 CG
+        public AudioClip audioClip; //실행될 SE
         [TextArea(3, 10)]
         public string[] sentences;
  

@@ -1188,11 +1188,14 @@ MonoBehaviour:
     - type: 5
       choiceType: 0
       standingCG: {fileID: 0}
+      audioClip: {fileID: 0}
       sentences:
       - "\uC790, \uC5EC\uAE30 \uD0A4.\n\uC800-\uAE30 \uBCF5\uB3C4\uB85C \uB4E4\uC5B4\uAC00\uC11C\n\uB05D\uCABD\uC5D0
         \uC788\uB294 \uBC29\uC774 \uD559\uC0DD \uBC29\uC774\uC57C, \uC54C\uC558\uC9C0?"
       - "\uBAA8\uB974\uB294 \uAC70 \uC788\uC73C\uBA74 \uBB3C\uC5B4\uBCF4\uACE0~\n\uADF8\uB7FC
         \uC218\uACE0\uD574~"
+  reqSwitch: {fileID: 0}
+  onSwitchAfterDlg: {fileID: 0}
 --- !u!1 &630725399
 GameObject:
   m_ObjectHideFlags: 0
@@ -3003,6 +3006,7 @@ MonoBehaviour:
     - type: 5
       choiceType: 0
       standingCG: {fileID: 0}
+      audioClip: {fileID: 0}
       sentences:
       - "\uC774 \uC8FC\uBCC0 \uAD6D\uB9BD\uB300\uD559 2\uD559\uB144\uC774\uB77C\uACE0
         \uD588\uC9C0?"
@@ -3015,6 +3019,8 @@ MonoBehaviour:
         \uACF3\uC774\uB77C\uACE0 \uC0DD\uAC01\uD558\uBA74 \uB418\uACE0~"
       - "\uADF8\uB798\uB3C4 \uAE68\uB057\uD558\uAC8C \uCCAD\uC18C\uD574\uB480\uC73C\uB2C8
         \uD559\uC0DD \uB9C8\uC74C\uC5D0\uB3C4 \uC3D9 \uB4E4\uAC70\uC57C!"
+  reqSwitch: {fileID: 0}
+  onSwitchAfterDlg: {fileID: 0}
 --- !u!1001 &1741624271
 PrefabInstance:
   m_ObjectHideFlags: 0
