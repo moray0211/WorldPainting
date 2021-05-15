@@ -27,7 +27,7 @@ public class Prologue_inRoom : MonoBehaviour
         semanager.playAudioClip(doorOpen);
         yield return new WaitForSeconds(doorOpen.length);
         semanager.playAudioClip(doorClose);
-        GameObject.Find("BlackScreen").GetComponent<FadeInOut>().FadeOut_func();
+        //GameObject.Find("BlackScreen").GetComponent<FadeInOut>().FadeOut_func();
         yield return new WaitForSeconds(doorClose.length);
 
         //인벤토리 재활성화

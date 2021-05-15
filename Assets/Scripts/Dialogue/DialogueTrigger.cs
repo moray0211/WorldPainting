@@ -15,18 +15,28 @@ public class DialogueTrigger : ItemInteractable
 
         if(reqSwitch != null)
         {
-            if(reqSwitch.isSwitchActive) TriggerDialogue();
+            if(reqSwitch.isSwitchActive) {
+                TriggerDialogue();
+            }
         }
         else TriggerDialogue();
+
     }
 
     public void TriggerDialogue()
     {
+
         //대화창이 사라졌을 경우에만 띄운다
         if (!FindObjectOfType<DialogueManager>().dialogueCanvas.activeSelf)
         {
+            //얻을 아이템이 있다면 아이템을 얻도록 함 (switch가 필요한 경우를 위해)
+            if(this.GetComponent<ItemPickup>().item!=null){ 
+                this.GetComponent<ItemPickup>().PickUp();
+            }
+            
             FindObjectOfType<DialogueManager>().dialogueCanvas.SetActive(true); //대화창 호출
             FindObjectOfType<DialogueManager>().StartDialogue(dialogue, onSwitchAfterDlg);
+
         }
         else FindObjectOfType<DialogueManager>().setWaitFalse();
 

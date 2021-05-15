@@ -359,7 +359,9 @@ GameObject:
   m_Component:
   - component: {fileID: 261710454}
   - component: {fileID: 261710456}
+  - component: {fileID: 261710457}
   - component: {fileID: 261710455}
+  - component: {fileID: 261710458}
   m_Layer: 0
   m_Name: arrow(left)
   m_TagString: Untagged
@@ -450,6 +452,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &261710457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261710453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25152268525ffba4e9ede5648c243dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: KitchenScene
+--- !u!61 &261710458
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261710453}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.97, y: 2.85}
+    newSize: {x: 3.97, y: 2.85}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.97, y: 2.85}
+  m_EdgeRadius: 0
 --- !u!1 &329724384
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,6 +691,7 @@ MonoBehaviour:
     - type: 0
       choiceType: 0
       standingCG: {fileID: 0}
+      audioClip: {fileID: 0}
       sentences:
       - "...\uC5B4\uCA50\uC9C0 \uC544\uAE4C \uB4E4\uB9B0 \uC18C\uB9AC\uB97C\n\uB530\uB77C\uAC00\uC57C
         \uD55C\uB2E4\uB294 \uC0DD\uAC01\uC774 \uB4E0\uB2E4."
@@ -818,18 +860,21 @@ MonoBehaviour:
     - type: 0
       choiceType: 0
       standingCG: {fileID: 21300000, guid: 384fcd050e6d75f42866b8b4b66ec2d5, type: 3}
+      audioClip: {fileID: 0}
       sentences:
       - "\uC57C!\uC774\uAC8C\uBC14\uB85C \uB098\uB808\uC774\uC158\uC774\uB2E4!"
       - "\uB098\uB808\uC774;\uC1582"
     - type: 1
       choiceType: 0
       standingCG: {fileID: 21300000, guid: 63f1d247bce661444a967fdb3f26fa15, type: 3}
+      audioClip: {fileID: 0}
       sentences:
       - "\uD50C\uB808\uC774\uC5B4\uC758\n\uB9D0\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F\u314F"
       - "\uC798 \uB098\uC624\uB294\uC9C0 \uD655\uC778\n\n\uB744\uC5B4\uC4F0\uAE30\uD14C\uC2A4\uD2B8"
     - type: 6
       choiceType: 0
       standingCG: {fileID: 0}
+      audioClip: {fileID: 0}
       sentences:
       - "\uC120\uD0DD\uC9C0\uB294"
       - "\uB450\uAC1C\uB9CC \uD574\uBD04"
@@ -837,18 +882,21 @@ MonoBehaviour:
     - type: 5
       choiceType: 1
       standingCG: {fileID: 0}
+      audioClip: {fileID: 0}
       sentences:
       - "\uC774\uAC74 \uC120\uD0DD1\uC77C\uACBD\uC6B0"
       - "\u3139\u3147\uAC1C\uBE61\uCCD0\uC11C\uB3CC\uC544\uBC84\uB9B4\uAC83\uAC19\uC74C"
     - type: 0
       choiceType: 1
       standingCG: {fileID: 0}
+      audioClip: {fileID: 0}
       sentences:
       - "\uC57C...\uB098 \uAC1C\uC5B4\uB835\uAC8C \uB9CC\uB4E0\uAC83\uAC19\uC740\uB370\n\uC774\uAC70
         \u3131\u314A\uB0D0?"
     - type: 5
       choiceType: 2
       standingCG: {fileID: 0}
+      audioClip: {fileID: 0}
       sentences:
       - "\uB450\uBC88\uC9F8\uC120\uD0F8\u3150\u3131"
       - "\uCCAB\uBC88\uC9F8\uC120\uD0DD\uD587\uB294\uB370\n\uC774\uAC70\uB098\uC624\uBA74\uC883\uB41C\uAC70\uC8E0.."
@@ -856,6 +904,7 @@ MonoBehaviour:
     - type: 5
       choiceType: 3
       standingCG: {fileID: 0}
+      audioClip: {fileID: 0}
       sentences:
       - "\uC138\uBC88\uC9F8 \uC120\uD0DD\uC785\uB2C8\uB2E4"
       - "\uD734 \uB4DC\uB514\uC5B4\uB05D\uB0A8"
@@ -863,6 +912,7 @@ MonoBehaviour:
     - type: 0
       choiceType: 0
       standingCG: {fileID: 0}
+      audioClip: {fileID: 0}
       sentences:
       - "\uC27D\uC9C0 \uC54A\uC740\uAC8C \uC544\uB2C8\uB77C\t"
       - "\uB108\uBB34 \uC5B4\uB824\uC6CC\uC694"
@@ -1644,6 +1694,7 @@ MonoBehaviour:
     - type: 0
       choiceType: 0
       standingCG: {fileID: 0}
+      audioClip: {fileID: 0}
       sentences:
       - "\uC0AC\uC6A9\uAC10\uC774 \uBCF4\uC774\uB294 \uB0A1\uC740 \uB9E4\uD2B8\uB2E4."
   reqSwitch: {fileID: 11400000, guid: 04dcf0c88496d4943887304dfa469d90, type: 2}
@@ -2035,6 +2086,7 @@ MonoBehaviour:
     - type: 0
       choiceType: 0
       standingCG: {fileID: 0}
+      audioClip: {fileID: 0}
       sentences:
       - "\u2026\uBC29 \uC548\uC5D0 \uB4E4\uC5B4\uC130\uB2E4."
       - "\uC0C1\uD0DC\uAC00 \uC88B\uC740 \uC6D0\uB8F8. \uAC8C\uB2E4\uAC00 \uC6D0\uB8F8\uCE58\uACE0
@@ -4636,11 +4688,13 @@ MonoBehaviour:
     - type: 1
       choiceType: 0
       standingCG: {fileID: 0}
+      audioClip: {fileID: 0}
       sentences:
       - "\"\uC560\uC57C, \uC774\uB9AC\uB85C \uC640\uBCF4\uACA0\uB2C8?\""
     - type: 0
       choiceType: 0
       standingCG: {fileID: 0}
+      audioClip: {fileID: 0}
       sentences:
       - "...\uBB50\uC9C0?\n\uBA38\uB9BF\uC18D\uC744 \uC6B8\uB824 \uD37C\uC9C0\uB294
         \uC18C\uB9AC\uC5D0 \uC18C\uB984\uC774 \uB3CB\uC558\uB2E4."

@@ -28,12 +28,17 @@ public class Inventory : MonoBehaviour
 
     public void Add (Item item)
     {
+        if(items.Contains(item)){
+            Debug.LogWarning("인벤토리에 같은 아이템 존재");
+            return;
+        }
         if(items.Count >= space)
         {
             Debug.LogWarning("인벤토리 공간보다 많은 아이템 획득");
             return;
         }
         items.Add(item);
+        Debug.Log("아이템 개수 증가 : "+items.Count);
 
         if(onItemChangedCallback != null)
         {

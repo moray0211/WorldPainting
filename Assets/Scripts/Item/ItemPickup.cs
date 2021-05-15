@@ -10,11 +10,9 @@ public class ItemPickup : ItemInteractable
     public override void Interact()
     {
         base.Interact();
-
-        PickUp();
     }
 
-    void PickUp()
+    public void PickUp()
     {
         Inventory.instance.Add(item);
         if (destroy) Destroy(gameObject);

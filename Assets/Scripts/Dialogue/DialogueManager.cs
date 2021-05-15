@@ -72,7 +72,9 @@ public class DialogueManager : MonoBehaviour
                 inTyping = false;
                 return;
             }
+            
             DisplayNextSentence();
+
         }
 
         //대화중일시 인벤토리 사용 불능
@@ -116,7 +118,6 @@ public class DialogueManager : MonoBehaviour
                         (dialogue.character[i].sentences[j], tmp));
                 }
             }
-
             //대사 시작
             inConversation = true;
 

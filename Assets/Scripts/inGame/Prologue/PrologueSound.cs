@@ -50,7 +50,7 @@ public class PrologueSound : MonoBehaviour
 
         if (readyNextScene && (!GameObject.Find("DialogueManager").GetComponent<DialogueManager>().inConversation))
         {
-            SceneManager.LoadScene("FrontScene");
+            SceneManager.LoadScene("SampleScene");
             readyNextScene = false;
         }
     }
