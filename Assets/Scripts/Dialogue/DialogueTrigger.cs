@@ -6,18 +6,33 @@ public class DialogueTrigger : ItemInteractable
 {
     public Dialogue dialogue;
     //아래 두 스위치 변수는 공란으로 둘 수 있음
-    public Switch reqSwitch; //이 대화가 실행되기 위해 요하는 스위치
-    public Switch onSwitchAfterDlg; //대화가 끝난 뒤 실행될 스위치
+    public Switch[] reqSwitch; //이 대화가 실행되기 위해 요하는 스위치
+
+    [System.Serializable]
+    public struct SwitchOnOffInf
+    {
+        public Switch[] onSwitchAfterDlg; //대화가 끝난 뒤 실행될 스위치
+        public Switch[] offSwitchAfterDlg; //대화가 끝난 뒤 꺼질 스위치
+    }
+
+    public SwitchOnOffInf switchOnOffInf;
 
     public override void Interact()
     {
         base.Interact();
 
-        if(reqSwitch != null)
+        bool allReqSwitchOn = true;
+        if (reqSwitch != null)
         {
-            if(reqSwitch.isSwitchActive) {
-                TriggerDialogue();
+            for (int i = 0; i < reqSwitch.Length; i++)
+            {
+                if (!reqSwitch[i].isSwitchActive)
+                {
+                    allReqSwitchOn = false;
+                }
             }
+            if (allReqSwitchOn) TriggerDialogue();
+
         }
         else TriggerDialogue();
 
@@ -37,11 +52,10 @@ public class DialogueTrigger : ItemInteractable
             }
 
             FindObjectOfType<DialogueManager>().dialogueCanvas.SetActive(true); //대화창 호출
-            FindObjectOfType<DialogueManager>().StartDialogue(dialogue, onSwitchAfterDlg);
+            FindObjectOfType<DialogueManager>().StartDialogue(dialogue, switchOnOffInf);
 
         }
         else FindObjectOfType<DialogueManager>().setWaitFalse();
-
     }
 
 }
