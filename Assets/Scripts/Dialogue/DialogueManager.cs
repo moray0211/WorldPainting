@@ -120,6 +120,7 @@ public class DialogueManager : MonoBehaviour
             }
             //대사 시작
             inConversation = true;
+            DisplayNextSentence();
 
         }
 

@@ -30,10 +30,12 @@ public class DialogueTrigger : ItemInteractable
         if (!FindObjectOfType<DialogueManager>().dialogueCanvas.activeSelf)
         {
             //얻을 아이템이 있다면 아이템을 얻도록 함 (switch가 필요한 경우를 위해)
-            if(this.GetComponent<ItemPickup>().item!=null){ 
+            if (this.GetComponent<ItemPickup>()!= null &&
+                this.GetComponent<ItemPickup>().item)
+            {
                 this.GetComponent<ItemPickup>().PickUp();
             }
-            
+
             FindObjectOfType<DialogueManager>().dialogueCanvas.SetActive(true); //대화창 호출
             FindObjectOfType<DialogueManager>().StartDialogue(dialogue, onSwitchAfterDlg);
 
