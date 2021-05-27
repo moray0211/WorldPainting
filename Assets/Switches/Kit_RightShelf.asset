@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ae73c11f17f62c47b53763750d1ecdc, type: 3}
-  m_Name: PrologueEndSwitch
+  m_Name: Kit_RightShelf
   m_EditorClassIdentifier: 
-  isSwitchActive: 1
-  comment: "\uD504\uB864\uB85C\uADF8 \uB300\uC0AC(\uBB38 \uC5F4\uACE0 \uB4E4\uC5B4\uC624\uAE30\uAE4C\uC9C0)
-    \uC644\uB8CC"
+  isSwitchActive: 0
+  comment: "\uC2A4\uC704\uCE58 \uC124\uBA85 \uC8FC\uC11D"
