@@ -10,6 +10,9 @@ public class EyeButtonAnimator : MonoBehaviour
     private Animator colorChangeButtonAnimator;
     bool isOpen = true;
     Color color = Color.white;
+    GameObject[] magentas;
+    GameObject[] yellows;
+    GameObject[] cyans;
 
     enum Color
     {
@@ -23,6 +26,16 @@ public class EyeButtonAnimator : MonoBehaviour
     {
         eyeButtonAnimator = GetComponent<Animator>();
         colorChangeButtonAnimator = colorChangeButton.GetComponent<Animator>();
+
+        //초기 오브젝트 색별로 구분
+        magentas=GameObject.FindGameObjectsWithTag("Magenta"); 
+        yellows=GameObject.FindGameObjectsWithTag("Yellow");
+        cyans=GameObject.FindGameObjectsWithTag("Cyan");
+
+        //색있는 오브젝트 보이지 않게 하기
+        setInvisibleColor(magentas);
+        setInvisibleColor(yellows);
+        setInvisibleColor(cyans);
     }
 
     public void closeOrOpenEyeButton()
@@ -65,6 +78,10 @@ public class EyeButtonAnimator : MonoBehaviour
         colorChangeButtonAnimator.SetTrigger("colorChangeButtonCloseTrigger");
         color = Color.white;
         isOpen = true;
+
+        setInvisibleColor(magentas);
+        setInvisibleColor(yellows);
+        setInvisibleColor(cyans);
     }
 
     public void magentaColorChangeButton()
@@ -75,6 +92,10 @@ public class EyeButtonAnimator : MonoBehaviour
         colorChangeButtonAnimator.ResetTrigger("colorChangeButtonCloseTrigger");
         colorChangeButtonAnimator.SetTrigger("colorChangeButtonCloseTrigger");
         color = Color.magenta;
+
+        setVisibleColor(magentas);
+        setInvisibleColor(yellows);
+        setInvisibleColor(cyans);
         isOpen = true;
     }
 
@@ -86,6 +107,10 @@ public class EyeButtonAnimator : MonoBehaviour
         colorChangeButtonAnimator.ResetTrigger("colorChangeButtonCloseTrigger");
         colorChangeButtonAnimator.SetTrigger("colorChangeButtonCloseTrigger");
         color = Color.cyan;
+
+        setVisibleColor(cyans);
+        setInvisibleColor(yellows);
+        setInvisibleColor(magentas);
         isOpen = true;
     }
 
@@ -97,7 +122,23 @@ public class EyeButtonAnimator : MonoBehaviour
         colorChangeButtonAnimator.ResetTrigger("colorChangeButtonCloseTrigger");
         colorChangeButtonAnimator.SetTrigger("colorChangeButtonCloseTrigger");
         color = Color.yellow;
+
+        setVisibleColor(yellows);
+        setInvisibleColor(cyans);
+        setInvisibleColor(magentas);
         isOpen = true;
     }
+    void setVisibleColor(GameObject[] arr){ //특정 색의 오브젝트가 보이게함
+        for(int i=0;i<arr.Length;i++){ 
+            if(arr[i]==true) //오브젝트가 Destroy되지 않았다면
+               arr[i].SetActive(true);
+        }
+    }
+    void setInvisibleColor(GameObject[] arr){//특정 색의 오브젝트가 보이지 않게 함
+        for(int i=0;i<arr.Length;i++){
+            if(arr[i]==true) arr[i].SetActive(false);
+        }
+    }
+
 
 }
