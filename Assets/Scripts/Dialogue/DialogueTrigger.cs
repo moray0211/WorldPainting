@@ -26,7 +26,7 @@ public class DialogueTrigger : ItemInteractable
         {
             for (int i = 0; i < reqSwitch.Length; i++)
             {
-                if (!reqSwitch[i].isSwitchActive)
+                if (!reqSwitch[i].getSwitchActive())
                 {
                     allReqSwitchOn = false;
                 }
@@ -41,8 +41,10 @@ public class DialogueTrigger : ItemInteractable
     public void TriggerDialogue()
     {
 
+        DialogueManager dialogueManager = FindObjectOfType<DialogueManager>();
+
         //대화창이 사라졌을 경우에만 띄운다
-        if (!FindObjectOfType<DialogueManager>().dialogueCanvas.activeSelf)
+        if (!dialogueManager.dialogueCanvas.activeSelf)
         {
             //얻을 아이템이 있다면 아이템을 얻도록 함 (switch가 필요한 경우를 위해)
             if (this.GetComponent<ItemPickup>()!= null &&
@@ -51,11 +53,11 @@ public class DialogueTrigger : ItemInteractable
                 this.GetComponent<ItemPickup>().PickUp();
             }
 
-            FindObjectOfType<DialogueManager>().dialogueCanvas.SetActive(true); //대화창 호출
-            FindObjectOfType<DialogueManager>().StartDialogue(dialogue, switchOnOffInf);
+            dialogueManager.dialogueCanvas.SetActive(true); //대화창 호출
+            dialogueManager.StartDialogue(dialogue, switchOnOffInf);
 
         }
-        else FindObjectOfType<DialogueManager>().setWaitFalse();
+        else dialogueManager.setWaitFalse();
     }
 
 }

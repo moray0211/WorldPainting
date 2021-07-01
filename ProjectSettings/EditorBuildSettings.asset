@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Bathroom_front_Scene.unity
     guid: 1b1d171b1e10b454ea17d34f4fb2e15f
+  - enabled: 1
+    path: Assets/Scenes/FrontScene.unity
+    guid: 59b3a41d3c5a4394193560b25895d52b
   m_configObjects: {}

@@ -125,7 +125,7 @@ public class DialogueManager : MonoBehaviour
             }
             //대사 시작
             inConversation = true;
-            DisplayNextSentence();
+            if(dialogue.character.Length > 1) DisplayNextSentence();
 
         }
 
@@ -136,6 +136,7 @@ public class DialogueManager : MonoBehaviour
 
         if (sentences.Count == 0)
         {
+
             EndConversation();
             return;
         }
@@ -324,10 +325,9 @@ public class DialogueManager : MonoBehaviour
     
     public void EndConversation()
     {
-        Debug.Log("End conversation");
         if(sentences.Count != 0) sentences.Dequeue();
         dialogueCanvas.SetActive(false); //대화창 퇴장
-        inConversation = false;
+        
         wait = true;
 
         //인벤토리 활성화
@@ -352,6 +352,8 @@ public class DialogueManager : MonoBehaviour
 
         }
 
+        inConversation = false;
+        Debug.Log("End conversation");
     }
 
     //타이핑 효과

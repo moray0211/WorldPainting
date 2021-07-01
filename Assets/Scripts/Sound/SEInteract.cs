@@ -14,7 +14,7 @@ public class SEInteract : ItemInteractable
         base.Interact();
         if(reqSwitch != null) //SE가 실행되기 위해 필요한 스위치가 있다면
         {
-            if (reqSwitch.isSwitchActive) //스위치가 켜져있을 경우
+            if (reqSwitch.getSwitchActive()) //스위치가 켜져있을 경우
             {
                 if (!GameObject.Find("DialogueManager").GetComponent<DialogueManager>().inConversation)
                     GameObject.Find("SEManager").GetComponent<SEManager>().playAudioClip(soundEffect);

@@ -15,8 +15,13 @@ public class Prologue_inRoom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
    {
-        semanager = GameObject.Find("SEManager").GetComponent<SEManager>();
-        StartCoroutine("Prologue_inRoom_play");
+        //프롤로그가 처음이라면 SE 실행
+        if (!prologueEndSwitch.getSwitchActive())
+        {
+            semanager = GameObject.Find("SEManager").GetComponent<SEManager>();
+            StartCoroutine("Prologue_inRoom_play");
+        }
+        
     }
 
     IEnumerator Prologue_inRoom_play()
@@ -44,7 +49,7 @@ public class Prologue_inRoom : MonoBehaviour
             semanager.playAudioClip(whisperSound);
             GameObject.Find("FirstEvent-2").GetComponent<DialogueTrigger>().TriggerDialogue();
             GameObject.Find("DialogueManager").GetComponent<DialogueManager>().DisplayNextSentence();
-            //prologueEndSwitch.setSwitchActive(true); //프롤로그 대사 끝
+            prologueEndSwitch.setSwitchActive(true); //프롤로그 대사 끝
             readyWhisperSound = false;
         }
 

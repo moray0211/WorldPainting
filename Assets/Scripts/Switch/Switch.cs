@@ -3,7 +3,8 @@
 [CreateAssetMenu(fileName = "New Switch", menuName = "Custom/Switch")]
 public class Switch : ScriptableObject
 {
-    public bool isSwitchActive = false;
+    public bool isSwitchActiveAtFirst = false;
+    bool isSwitchActive = false;
     [TextArea(3, 10)]
     public string comment = "스위치 설명 주석";
 
@@ -16,4 +17,10 @@ public class Switch : ScriptableObject
     {
         return isSwitchActive;
     }
+
+    private void Awake()
+    {
+        isSwitchActive = isSwitchActiveAtFirst;
+    }
+
 }
