@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae73c11f17f62c47b53763750d1ecdc, type: 3}
+  m_Name: Kit_LeftShelf
+  m_EditorClassIdentifier: 
+  isSwitchActive: 0
+  comment: "\uBD80\uC5CC \uC120\uBC18 \uC67C\uCABD \uC704\uB97C \uC5F4\uC5C8\uC74C"

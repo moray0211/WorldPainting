@@ -21,6 +21,22 @@ public class DialogueTrigger : ItemInteractable
     {
         base.Interact();
 
+        //아이템 사용하려고 할 경우, 대사를 하지 않고 넘어감
+        //(대사와 아이템 사용 스크립트의 중복 방지를 위해 추가)
+        InventorySlot[] inventorySlots = GameObject.FindObjectsOfType<InventorySlot>();
+  
+        for (int i = 0; i < inventorySlots.Length; i++)
+        {
+            if (inventorySlots[i].getItem() != null &&inventorySlots[i].getItem().getItemActive())
+            { 
+                Debug.Log("아이템 사용");
+                return;
+            }
+            
+        }
+        //남현정 추가 
+
+
         bool allReqSwitchOn = true;
         if (reqSwitch != null)
         {
