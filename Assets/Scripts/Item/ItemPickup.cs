@@ -19,7 +19,7 @@ public class ItemPickup : ItemInteractable
     {
         Inventory.instance.Add(item);
         if (destroy) {
-            gameManager.setInactive(gameObject.name);
+            //gameManager.setInactive(gameObject.name);
             Destroy(gameObject);
         }
     }

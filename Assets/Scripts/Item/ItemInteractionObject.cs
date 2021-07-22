@@ -11,6 +11,7 @@ public class ItemInteractionObject : ItemInteractable
     public Dialogue dialogue; //대화 진행한다면 그 내용
     public Switch[] reqSwitch; //아이템을 사용하기 위한 스위치
     public Switch[] onSwitchAfterInteract; //Interact 이후 On되는 스위치
+    public Switch[] offSwitchAfterInteract; //Interact 이후 off되는 스위치
 
     [TextArea(3, 10)]
     public string comment = "상호작용 설명 주석";
@@ -23,7 +24,7 @@ public class ItemInteractionObject : ItemInteractable
         if(reqSwitch!=null) {
              for (int i = 0; i < reqSwitch.Length; i++)
             {
-                if (!reqSwitch[i].isSwitchActive)
+                if (!reqSwitch[i].getSwitchActive())
                 {
                     allReqSwitchOn = false;
                 }

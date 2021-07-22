@@ -14,7 +14,7 @@ public class EyeButtonAnimator : MonoBehaviour
     GameObject[] yellows;
     GameObject[] cyans;
 
-    enum Color
+    public enum Color
     {
         white,
         magenta,
@@ -82,6 +82,7 @@ public class EyeButtonAnimator : MonoBehaviour
         setInvisibleColor(magentas);
         setInvisibleColor(yellows);
         setInvisibleColor(cyans);
+        FindObjectOfType<ColorChangeManager>().changeColor();
     }
 
     public void magentaColorChangeButton()
@@ -96,6 +97,7 @@ public class EyeButtonAnimator : MonoBehaviour
         setVisibleColor(magentas);
         setInvisibleColor(yellows);
         setInvisibleColor(cyans);
+        FindObjectOfType<ColorChangeManager>().changeColor();
         isOpen = true;
     }
 
@@ -111,6 +113,7 @@ public class EyeButtonAnimator : MonoBehaviour
         setVisibleColor(cyans);
         setInvisibleColor(yellows);
         setInvisibleColor(magentas);
+        FindObjectOfType<ColorChangeManager>().changeColor();
         isOpen = true;
     }
 
@@ -126,8 +129,35 @@ public class EyeButtonAnimator : MonoBehaviour
         setVisibleColor(yellows);
         setInvisibleColor(cyans);
         setInvisibleColor(magentas);
+        FindObjectOfType<ColorChangeManager>().changeColor();
         isOpen = true;
     }
+    public void setVisible(Color nowcolor){ //특정 색을 보이게 하고, 나머지 색은 보이지 않게 함
+
+            switch(nowcolor){
+                case Color.white :
+                    setInvisibleColor(yellows);
+                    setInvisibleColor(cyans);
+                    setInvisibleColor(magentas);
+                    break;
+                case Color.magenta :
+                    setVisibleColor(magentas);
+                    setInvisibleColor(yellows);
+                    setInvisibleColor(cyans);
+                    break;
+                case Color.cyan :
+                    setVisibleColor(cyans);
+                    setInvisibleColor(yellows);
+                    setInvisibleColor(magentas);
+                    break;
+                case Color.yellow : 
+                    setVisibleColor(yellows);
+                    setInvisibleColor(cyans);
+                    setInvisibleColor(magentas);
+                    break;
+            }
+    }
+
     void setVisibleColor(GameObject[] arr){ //특정 색의 오브젝트가 보이게함
         for(int i=0;i<arr.Length;i++){ 
             if(arr[i]==true) //오브젝트가 Destroy되지 않았다면
@@ -140,5 +170,28 @@ public class EyeButtonAnimator : MonoBehaviour
         }
     }
 
+    public void ColorRetry(){ //확대샷에서 기본샷으로 돌아올 때 색상 다시 적용함
+        FindObjectOfType<ColorChangeManager>().changeColor(); //배경색 다시적용
 
+        setVisible(Color.white); //아이템 색 다시적용
+        magentas=GameObject.FindGameObjectsWithTag("Magenta"); 
+        yellows=GameObject.FindGameObjectsWithTag("Yellow");
+        cyans=GameObject.FindGameObjectsWithTag("Cyan");
+        Debug.Log("magenta 개수 : "+magentas.Length);
+        setVisible(color);
+    }
+
+    public int getcolor(){
+        switch(color){
+            case Color.white :
+                return 0;
+            case Color.magenta :
+                return 1;
+            case Color.cyan :
+                return 2;
+            case Color.yellow : 
+                return 3;
+            default : return -1;
+        }
+    }
 }
