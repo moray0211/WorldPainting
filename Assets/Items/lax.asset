@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe06985073a5064ab15ac4d3336e886, type: 3}
   m_Name: lax
   m_EditorClassIdentifier: 
-  name: lax
-  icon: {fileID: 21300000, guid: 9433c7a999acdb241a58d036bc5ebaf9, type: 3}
+  name: Lax
+  icon: {fileID: 21300000, guid: 9596b4ce856522f4aa369c5dd0cf70c6, type: 3}

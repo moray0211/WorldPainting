@@ -10,9 +10,9 @@ public class EyeButtonAnimator : MonoBehaviour
     private Animator colorChangeButtonAnimator;
     bool isOpen = true;
     Color color = Color.white;
-    GameObject[] magentas;
-    GameObject[] yellows;
-    GameObject[] cyans;
+    List<GameObject> magentas;
+    List<GameObject> yellows;
+    List<GameObject> cyans;
 
     public enum Color
     {
@@ -26,16 +26,11 @@ public class EyeButtonAnimator : MonoBehaviour
     {
         eyeButtonAnimator = GetComponent<Animator>();
         colorChangeButtonAnimator = colorChangeButton.GetComponent<Animator>();
+        magentas=new List<GameObject>();
+        yellows=new List<GameObject>();
+        cyans=new List<GameObject>();
 
-        //초기 오브젝트 색별로 구분
-        magentas=GameObject.FindGameObjectsWithTag("Magenta"); 
-        yellows=GameObject.FindGameObjectsWithTag("Yellow");
-        cyans=GameObject.FindGameObjectsWithTag("Cyan");
-
-        //색있는 오브젝트 보이지 않게 하기
-        setInvisibleColor(magentas);
-        setInvisibleColor(yellows);
-        setInvisibleColor(cyans);
+        ColorReset(); //초기 오브젝트 설정
     }
 
     public void closeOrOpenEyeButton()
@@ -79,9 +74,7 @@ public class EyeButtonAnimator : MonoBehaviour
         color = Color.white;
         isOpen = true;
 
-        setInvisibleColor(magentas);
-        setInvisibleColor(yellows);
-        setInvisibleColor(cyans);
+        setVisible(color);
         FindObjectOfType<ColorChangeManager>().changeColor();
     }
 
@@ -94,9 +87,7 @@ public class EyeButtonAnimator : MonoBehaviour
         colorChangeButtonAnimator.SetTrigger("colorChangeButtonCloseTrigger");
         color = Color.magenta;
 
-        setVisibleColor(magentas);
-        setInvisibleColor(yellows);
-        setInvisibleColor(cyans);
+        setVisible(color);
         FindObjectOfType<ColorChangeManager>().changeColor();
         isOpen = true;
     }
@@ -110,9 +101,7 @@ public class EyeButtonAnimator : MonoBehaviour
         colorChangeButtonAnimator.SetTrigger("colorChangeButtonCloseTrigger");
         color = Color.cyan;
 
-        setVisibleColor(cyans);
-        setInvisibleColor(yellows);
-        setInvisibleColor(magentas);
+        setVisible(color);
         FindObjectOfType<ColorChangeManager>().changeColor();
         isOpen = true;
     }
@@ -126,12 +115,11 @@ public class EyeButtonAnimator : MonoBehaviour
         colorChangeButtonAnimator.SetTrigger("colorChangeButtonCloseTrigger");
         color = Color.yellow;
 
-        setVisibleColor(yellows);
-        setInvisibleColor(cyans);
-        setInvisibleColor(magentas);
+        setVisible(color);
         FindObjectOfType<ColorChangeManager>().changeColor();
         isOpen = true;
     }
+    
     public void setVisible(Color nowcolor){ //특정 색을 보이게 하고, 나머지 색은 보이지 않게 함
 
             switch(nowcolor){
@@ -158,27 +146,72 @@ public class EyeButtonAnimator : MonoBehaviour
             }
     }
 
-    void setVisibleColor(GameObject[] arr){ //특정 색의 오브젝트가 보이게함
-        for(int i=0;i<arr.Length;i++){ 
-            if(arr[i]==true) //오브젝트가 Destroy되지 않았다면
-               arr[i].SetActive(true);
-        }
-    }
-    void setInvisibleColor(GameObject[] arr){//특정 색의 오브젝트가 보이지 않게 함
-        for(int i=0;i<arr.Length;i++){
-            if(arr[i]==true) arr[i].SetActive(false);
+    void setVisibleColor(List<GameObject> arr){ //특정 색의 오브젝트가 보이게함
+        for(int i=0;i<arr.Count;i++){ 
+            if(arr[i]==true) {//오브젝트가 Destroy되지 않았다면
+                arr[i].SetActive(true);
+            }
         }
     }
 
-    public void ColorRetry(){ //확대샷에서 기본샷으로 돌아올 때 색상 다시 적용함
+    void setInvisibleColor(List<GameObject> arr){//특정 색의 오브젝트가 보이지 않게 함
+        for(int i=0;i<arr.Count;i++){
+            if(arr[i]==true){
+                arr[i].SetActive(false);
+            }
+                
+        }
+    }
+
+    public void ColorReset(){ //확대샷에서 기본샷으로 돌아올 때 색상 다시 적용함
         FindObjectOfType<ColorChangeManager>().changeColor(); //배경색 다시적용
 
         setVisible(Color.white); //아이템 색 다시적용
-        magentas=GameObject.FindGameObjectsWithTag("Magenta"); 
-        yellows=GameObject.FindGameObjectsWithTag("Yellow");
-        cyans=GameObject.FindGameObjectsWithTag("Cyan");
-        Debug.Log("magenta 개수 : "+magentas.Length);
+        foreach(GameObject magen in GameObject.FindGameObjectsWithTag("Magenta")){
+            if(magentas.Find(o => o.name==magen.name)==false){
+                magentas.Add(magen);
+            }
+        }
+        foreach(GameObject cyan in GameObject.FindGameObjectsWithTag("Cyan")){
+            if(cyans.Find(o => o.name==cyan.name)==false){
+                cyans.Add(cyan);
+            }
+        }
+
+        foreach(GameObject yellow in GameObject.FindGameObjectsWithTag("Yellow")){
+            if(yellows.Find(o => o.name==yellow.name)==false){
+                yellows.Add(yellow);
+            }
+        }
         setVisible(color);
+    }
+
+    public void deleteObject(string pname,string tag){
+        if(tag=="Magenta"){
+            magentas.Remove(magentas.Find(o => o.name==pname));
+            
+            GameObject tem=magentas.Find(o => o.name.Contains(pname));
+            if(tem==true){
+                magentas.Remove(magentas.Find(o => o.name==tem.name));
+                Destroy(tem);
+            }
+        }else if(tag=="Cyan"){
+            cyans.Remove(cyans.Find(o => o.name==pname));
+            
+            GameObject tem=cyans.Find(o => o.name.Contains(pname));
+            if(tem==true){
+                cyans.Remove(cyans.Find(o => o.name==tem.name));
+                Destroy(tem);
+            }
+        }else if(tag=="Yellow"){
+            yellows.Remove(yellows.Find(o => o.name==pname));
+            
+            GameObject tem=yellows.Find(o => o.name.Contains(pname));
+            if(tem==true){
+                yellows.Remove(yellows.Find(o => o.name==tem.name));
+                Destroy(tem);
+            }
+        }
     }
 
     public int getcolor(){
