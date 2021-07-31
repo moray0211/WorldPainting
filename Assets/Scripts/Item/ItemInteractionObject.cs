@@ -43,6 +43,7 @@ public class ItemInteractionObject : ItemInteractable
             if (inventorySlots[i].getItem() != null && inventorySlots[i].getItem() == interactableItem && inventorySlots[i].getItem().getItemActive())
             {
                 //상호작용
+                Debug.Log("아이템 : "+inventorySlots[i].getItem().name);
                 inventorySlots[i].isSlotActive = false;
                 inventorySlots[i].GetComponent<InventorySlotItemActive>().CancleAllSlotsActive();
                 if (destroyItem) Inventory.instance.Remove(interactableItem);

@@ -7,6 +7,7 @@ public class CloseObjectTrigger : ItemInteractable
     public override void Interact()
     {
         base.Interact();
-        this.GetComponentInParent<CloseObjcet>().setclose();
+        Debug.Log("닫기");
+        GetComponentInParent<CloseObjcet>().setclose();
     }
 }

@@ -7,6 +7,7 @@ public class Item : ScriptableObject
     new public string name = "New Item";
     public Sprite icon = null;
     bool isItemActive = false;
+    public Dialogue[] dialogues;
 
     public void setItemActive(bool active) {
         isItemActive = active;
