@@ -34,7 +34,6 @@ public class DialogueTrigger : ItemInteractable
             }
             
         }
-        //남현정 추가 
 
 
         bool allReqSwitchOn = true;
