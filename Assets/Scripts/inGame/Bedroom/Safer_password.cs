@@ -9,6 +9,8 @@ public class Safer_password : MonoBehaviour
     public string nowPassword;
     public Text PasswordText;
 
+    public GameObject safer_panel;
+
     void Start()
     {
         resetInputPassword();
@@ -25,6 +27,7 @@ public class Safer_password : MonoBehaviour
             if (nowPassword == AnswerPassword)
             {
                 Debug.Log("비밀번호 정답");
+                safer_panel.SetActive(false);
             }
             else
             {

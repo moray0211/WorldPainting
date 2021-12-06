@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-
-
 public class Safer_BtnTrigger : MonoBehaviour
 {
     public enum BtnType

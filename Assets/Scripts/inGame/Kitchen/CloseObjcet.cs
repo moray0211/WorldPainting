@@ -9,14 +9,14 @@ public class CloseObjcet : MonoBehaviour
 
     public void setopen(){ //줌인, 서랍을 열 때 실행되는 함수
         changeobj.SetActive(false);
-        FindObjectOfType<EyeButtonAnimator>().ColorReset();
+        FindObjectOfType<EyeButtonAnimator>().ColorReArrange();
         setInactivechild();
     }
 
     public void setclose(){ //줌아웃
         changeobj.SetActive(true);
         setactivechild(); //자식들까지 active 시켜준다 (색상 적용을 위해)
-        FindObjectOfType<EyeButtonAnimator>().ColorReset();
+        FindObjectOfType<EyeButtonAnimator>().ColorReArrange();
         this.gameObject.SetActive(false);
     }
 

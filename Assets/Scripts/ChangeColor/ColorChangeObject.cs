@@ -14,14 +14,10 @@ public class ColorChangeObject : MonoBehaviour
 
     public void changecolor(int color){
         if(spriteRenderer!=null){
-            if(color>0){
-                spriteRenderer.sprite=imgs[color];
-            }
+            spriteRenderer.sprite=imgs[color];
         }else{
             spriteRenderer=this.GetComponent<SpriteRenderer>();
-            if(color>0){
-                spriteRenderer.sprite=imgs[color];
-            }  
+            spriteRenderer.sprite=imgs[color];
         }
     }
 

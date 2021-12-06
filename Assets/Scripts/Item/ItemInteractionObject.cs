@@ -11,7 +11,6 @@ public class ItemInteractionObject : ItemInteractable
     public Dialogue dialogue; //대화 진행한다면 그 내용
     public Switch[] reqSwitch; //아이템을 사용하기 위한 스위치
     public Switch[] onSwitchAfterInteract; //Interact 이후 On되는 스위치
-    public Switch[] offSwitchAfterInteract; //Interact 이후 off되는 스위치
 
     [TextArea(3, 10)]
     public string comment = "상호작용 설명 주석";
@@ -43,7 +42,6 @@ public class ItemInteractionObject : ItemInteractable
             if (inventorySlots[i].getItem() != null && inventorySlots[i].getItem() == interactableItem && inventorySlots[i].getItem().getItemActive())
             {
                 //상호작용
-                Debug.Log("아이템 : "+inventorySlots[i].getItem().name);
                 inventorySlots[i].isSlotActive = false;
                 inventorySlots[i].GetComponent<InventorySlotItemActive>().CancleAllSlotsActive();
                 if (destroyItem) Inventory.instance.Remove(interactableItem);
@@ -69,5 +67,26 @@ public class ItemInteractionObject : ItemInteractable
         }
         Object.FindObjectOfType<InventorySlotItemActive>().CancleAllSlotsActive();
     }
+
+    private void Awake()
+    {
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        if (!gameManager.IsReset)
+        {
+            destoryIfNeeded();
+        }
+    }
+    public void destoryIfNeeded()
+    {
+        if (onSwitchAfterInteract != null)
+        {
+            for(int i=0;i< onSwitchAfterInteract.Length; i++)
+            {
+                if (!onSwitchAfterInteract[i].getSwitchActive()) return;
+            }
+            Destroy(gameObject);
+        }
+    }
+
 
 }

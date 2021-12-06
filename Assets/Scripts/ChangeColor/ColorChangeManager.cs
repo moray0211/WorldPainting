@@ -10,6 +10,7 @@ public class ColorChangeManager : MonoBehaviour
     {
         color=FindObjectOfType<EyeButtonAnimator>().getcolor();
         changes=GameObject.FindGameObjectsWithTag("Change");
+        changeColor();
     }
 
     public void changeColor(){

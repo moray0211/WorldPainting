@@ -13,11 +13,23 @@ public class Changable : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D rayhit = Physics2D.Raycast(mousePos, Vector2.zero);
-            if (rayhit.collider != null && rayhit.transform == this.gameObject.transform&&!(UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()))
+            RaycastHit2D[] rayhits = Physics2D.RaycastAll(mousePos, Vector2.zero, 20);
+            if (rayhits.Length > 0)
             {
-                if (GameObject.Find("DialogueManager").GetComponent<DialogueManager>().inConversation == false){
-                    change();
+                int priorityindex = 0;
+                for (int i = 1; i < rayhits.Length; i++) //여러 오브젝트가 겹쳐있는 경우, 레이어가 더 높은 오브젝트를 선택
+                {
+                    if (rayhits[i].collider.gameObject.GetComponent<SpriteRenderer>() == true && rayhits[i].collider.gameObject.GetComponent<SpriteRenderer>().sortingLayerName == "Layer3")
+                        priorityindex = i;
+                }
+
+                RaycastHit2D rayhit = rayhits[priorityindex];
+                if (rayhit.collider != null && rayhit.transform == this.gameObject.transform && !(UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()))
+                {
+                    if (GameObject.Find("DialogueManager").GetComponent<DialogueManager>().inConversation == false)
+                    {
+                        change();
+                    }
                 }
             }
         }

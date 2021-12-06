@@ -48,7 +48,6 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T>
 
         else
         {
-            Debug.Log(GetType().Name + " 싱글톤 클래스 존재함으로 새로운 싱글톤 삭제");
             Destroy(this.gameObject);
         }
 
