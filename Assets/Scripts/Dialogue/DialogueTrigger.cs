@@ -15,6 +15,8 @@ public class DialogueTrigger : ItemInteractable
         public Switch[] offSwitchAfterDlg; //대화가 끝난 뒤 꺼질 스위치
     }
 
+    public bool destroyThisComp = false; //끝나고 이 스크립트 삭제
+
     public SwitchOnOffInf switchOnOffInf;
 
     public override void Interact()
@@ -70,7 +72,7 @@ public class DialogueTrigger : ItemInteractable
             }
 
             dialogueManager.dialogueCanvas.SetActive(true); //대화창 호출
-            dialogueManager.StartDialogue(dialogue, switchOnOffInf);
+            dialogueManager.StartDialogue(dialogue, switchOnOffInf, destroyThisComp, this);
 
         }
         else dialogueManager.setWaitFalse();

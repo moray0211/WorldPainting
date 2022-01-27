@@ -6,6 +6,7 @@ public class ItemPickup : ItemInteractable
 {
     public Item item;
     public bool destroy = false;
+    public bool destroy_thisComp = false;
     GameManager gameManager;
     void Start(){
         gameManager=GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -18,8 +19,12 @@ public class ItemPickup : ItemInteractable
     public void PickUp()
     {
         Inventory.instance.Add(item);
+        if (destroy_thisComp)
+        {
+            Destroy(this);
+        }
         if (destroy) {
-            gameManager.setInactive(gameObject.name);
+            //gameManager.setInactive(gameObject.name);
             Destroy(gameObject);
         }
     }

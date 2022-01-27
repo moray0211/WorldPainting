@@ -22,6 +22,9 @@ public class DialogueManager : MonoBehaviour
     public float typingSpeed;
     public AudioSource typingSound;
 
+    bool destroyTriggerComp;
+    DialogueTrigger dialogueTrigger;
+
     struct Types //Dialogue.cs의 Sentences클래스와 동일한 구성
     {
         public Dialogue.Type type;
@@ -57,7 +60,8 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<KeyValuePair<string, Types>>();
 
         if (GameObject.Find("ItemsParent") != null)
-        { buttons = GameObject.Find("ItemsParent").GetComponentsInChildren<Button>(); }
+        { buttons = GameObject.Find("ItemsParent").GetComponentsInChildren<Button>();}
+
     }
 
     void Update()
@@ -93,8 +97,12 @@ public class DialogueManager : MonoBehaviour
 
     DialogueTrigger.SwitchOnOffInf switchOnOffInf;
     //대화 시작시 호출
-    public void StartDialogue (Dialogue dialogue, DialogueTrigger.SwitchOnOffInf switchOnOffInf)
+    public void StartDialogue (Dialogue dialogue, DialogueTrigger.SwitchOnOffInf switchOnOffInf, bool destroyTriggerComp = false, DialogueTrigger dialogueTrigger = null)
     {
+
+        this.destroyTriggerComp = destroyTriggerComp;
+        this.dialogueTrigger = dialogueTrigger;
+
         //이미 대화를 하고 있는 경우가 아니라면
         if (!inConversation)
         {
@@ -125,8 +133,7 @@ public class DialogueManager : MonoBehaviour
             }
             //대사 시작
             inConversation = true;
-            if(dialogue.character.Length > 1) DisplayNextSentence();
-
+            if(dialogue.character.Length >= 1) DisplayNextSentence();
         }
 
     }
@@ -353,6 +360,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         inConversation = false;
+        if (destroyTriggerComp && dialogueTrigger!=null) Destroy(dialogueTrigger);
         Debug.Log("End conversation");
     }
 

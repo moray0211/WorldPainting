@@ -14,6 +14,10 @@ public class EyeButtonAnimator : MonoBehaviour
     GameObject[] yellows;
     GameObject[] cyans;
 
+    public Switch EyeColor_C;
+    public Switch EyeColor_M;
+    public Switch EyeColor_Y;
+
     enum Color
     {
         white,
@@ -36,6 +40,10 @@ public class EyeButtonAnimator : MonoBehaviour
         setInvisibleColor(magentas);
         setInvisibleColor(yellows);
         setInvisibleColor(cyans);
+        EyeColor_M.setSwitchActive(false);
+        EyeColor_C.setSwitchActive(false);
+        EyeColor_Y.setSwitchActive(false);
+
     }
 
     public void closeOrOpenEyeButton()
@@ -82,6 +90,9 @@ public class EyeButtonAnimator : MonoBehaviour
         setInvisibleColor(magentas);
         setInvisibleColor(yellows);
         setInvisibleColor(cyans);
+        EyeColor_M.setSwitchActive(false);
+        EyeColor_C.setSwitchActive(false);
+        EyeColor_Y.setSwitchActive(false);
     }
 
     public void magentaColorChangeButton()
@@ -97,6 +108,10 @@ public class EyeButtonAnimator : MonoBehaviour
         setInvisibleColor(yellows);
         setInvisibleColor(cyans);
         isOpen = true;
+
+        EyeColor_M.setSwitchActive(true);
+        EyeColor_C.setSwitchActive(false);
+        EyeColor_Y.setSwitchActive(false);
     }
 
     public void cyanColorChangeButton()
@@ -112,6 +127,10 @@ public class EyeButtonAnimator : MonoBehaviour
         setInvisibleColor(yellows);
         setInvisibleColor(magentas);
         isOpen = true;
+
+        EyeColor_M.setSwitchActive(false);
+        EyeColor_C.setSwitchActive(true);
+        EyeColor_Y.setSwitchActive(false);
     }
 
     public void yellowColorChangeButton()
@@ -127,6 +146,10 @@ public class EyeButtonAnimator : MonoBehaviour
         setInvisibleColor(cyans);
         setInvisibleColor(magentas);
         isOpen = true;
+
+        EyeColor_M.setSwitchActive(false);
+        EyeColor_C.setSwitchActive(false);
+        EyeColor_Y.setSwitchActive(true);
     }
     void setVisibleColor(GameObject[] arr){ //특정 색의 오브젝트가 보이게함
         for(int i=0;i<arr.Length;i++){ 

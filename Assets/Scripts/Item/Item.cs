@@ -4,7 +4,8 @@
 public class Item : ScriptableObject
 {
 
-    new public string name = "New Item";
+    new public string name = "New Item"; //이름
+    public string itemDef; //설명
     public Sprite icon = null;
     bool isItemActive = false;
 

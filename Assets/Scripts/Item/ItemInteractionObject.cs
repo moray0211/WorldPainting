@@ -23,7 +23,7 @@ public class ItemInteractionObject : ItemInteractable
         if(reqSwitch!=null) {
              for (int i = 0; i < reqSwitch.Length; i++)
             {
-                if (!reqSwitch[i].isSwitchActive)
+                if (!reqSwitch[i].getSwitchActive())
                 {
                     allReqSwitchOn = false;
                 }
