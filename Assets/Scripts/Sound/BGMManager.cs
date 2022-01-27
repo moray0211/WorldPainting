@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BGMManager : MonoBehaviour
+public class BGMManager : Singleton<BGMManager>
 {
     public AudioSource audioSource;
     public AudioClip audioClip;

@@ -31,12 +31,10 @@ public class DialogueTrigger : ItemInteractable
         {
             if (inventorySlots[i].getItem() != null &&inventorySlots[i].getItem().getItemActive())
             { 
-                Debug.Log("아이템 사용");
                 return;
             }
             
         }
-        //남현정 추가 
 
 
         bool allReqSwitchOn = true;
@@ -59,16 +57,16 @@ public class DialogueTrigger : ItemInteractable
     public void TriggerDialogue()
     {
 
-        DialogueManager dialogueManager = FindObjectOfType<DialogueManager>();
+        DialogueManager dialogueManager = SingletonContainer.instance.GetComponentInChildren<DialogueManager>();
 
         //대화창이 사라졌을 경우에만 띄운다
         if (!dialogueManager.dialogueCanvas.activeSelf)
         {
             //얻을 아이템이 있다면 아이템을 얻도록 함 (switch가 필요한 경우를 위해)
-            if (this.GetComponent<ItemPickup>()!= null &&
-                this.GetComponent<ItemPickup>().item)
+            if (GetComponent<ItemPickup>()!= null &&
+                !GetComponent<ItemPickup>().item.isItemDestroyInScene)
             {
-                this.GetComponent<ItemPickup>().PickUp();
+                GetComponent<ItemPickup>().PickUp();
             }
 
             dialogueManager.dialogueCanvas.SetActive(true); //대화창 호출

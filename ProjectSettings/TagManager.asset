@@ -5,9 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Item
+  - Magenta
   - Yellow
   - Cyan
-  - Magenta
+  - Change
   layers:
   - Default
   - TransparentFX

@@ -133,7 +133,8 @@ public class DialogueManager : MonoBehaviour
             }
             //대사 시작
             inConversation = true;
-            if(dialogue.character.Length >= 1) DisplayNextSentence();
+            if(dialogue.character.Length >=1) DisplayNextSentence();
+
         }
 
     }

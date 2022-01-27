@@ -13,6 +13,7 @@ public class ClickToChangeScene : ItemInteractable
         base.Interact();
         if(sceneName != null)
         {
+            FindObjectOfType<GameManager>().IsStart = false;
             //SE 재생
             if (audioClip != null) GameObject.Find("SEManager").GetComponent<SEManager>().playAudioClip(audioClip);
             SceneManager.LoadScene(sceneName);

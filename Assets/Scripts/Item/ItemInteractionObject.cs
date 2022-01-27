@@ -68,4 +68,25 @@ public class ItemInteractionObject : ItemInteractable
         Object.FindObjectOfType<InventorySlotItemActive>().CancleAllSlotsActive();
     }
 
+    private void Awake()
+    {
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        if (!gameManager.IsReset)
+        {
+            destoryIfNeeded();
+        }
+    }
+    public void destoryIfNeeded()
+    {
+        if (onSwitchAfterInteract != null)
+        {
+            for(int i=0;i< onSwitchAfterInteract.Length; i++)
+            {
+                if (!onSwitchAfterInteract[i].getSwitchActive()) return;
+            }
+            Destroy(gameObject);
+        }
+    }
+
+
 }
