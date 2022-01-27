@@ -7,6 +7,21 @@ public class DialogueManager : MonoBehaviour
 {
     public GameObject dialogueCanvas;
     public GameObject DialoguePanel;
+    public Image Namebox;
+    public Text NameText;
+    public List<Sprite> NameboxImages;
+    public List<Sprite> White_StandingCG;
+    public List<Sprite> Magenta_StandingCG;
+    enum DialogueType
+    {
+        narration,
+        magenta,
+        cyan,
+        yellow,
+        black,
+        none
+    };
+
     public Sprite narration_box;
     public Sprite magenta_box;
     public Sprite cyan_box;
@@ -160,8 +175,21 @@ public class DialogueManager : MonoBehaviour
             AudioClip audioClip = sentences.Peek().Value.audioClip;
 
             //캐릭터별 대화창 설정
-            if (type == Dialogue.Type.narration) DialoguePanel.GetComponent<Image>().sprite = narration_box;
-            if (type == Dialogue.Type.magenta) DialoguePanel.GetComponent<Image>().sprite = magenta_box;
+            if (type == Dialogue.Type.narration)
+            {
+                //DialoguePanel.GetComponent<Image>().sprite = narration_box;
+                Namebox.sprite = NameboxImages[0];
+                NameText.text = "<color=#103051>화이트</color>";
+                standigCGImage.sprite = White_StandingCG[0];
+            };
+
+            if (type == Dialogue.Type.magenta)
+            {
+                //DialoguePanel.GetComponent<Image>().sprite = magenta_box;
+                Namebox.sprite = NameboxImages[1];
+                NameText.text = "<color=#e8338e>마젠타</color>";
+                standigCGImage.sprite = Magenta_StandingCG[0];
+            }
             if (type == Dialogue.Type.cyan) DialoguePanel.GetComponent<Image>().sprite = cyan_box;
             if (type == Dialogue.Type.yellow) DialoguePanel.GetComponent<Image>().sprite = yellow_box;
             if (type == Dialogue.Type.black) DialoguePanel.GetComponent<Image>().sprite = black_box;
@@ -176,7 +204,7 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                standigCGImage.sprite = null;
+                //standigCGImage.sprite = null;
             }
 
             sentences.Dequeue();

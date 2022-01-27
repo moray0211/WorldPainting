@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class EyeButtonAnimator : MonoBehaviour
 {
@@ -28,13 +29,26 @@ public class EyeButtonAnimator : MonoBehaviour
 
     private void Start()
     {
+        if (FindObjectOfType<GameManager>().IsStart)
+        {
+            eyeButtonAnimator = GetComponent<Animator>();
+
+            Animator[] findanimators = UISingleton.instance.transform.GetComponentsInChildren<Animator>();
+            for (int i = 0; i < findanimators.Length; i++)
+            {
+                if (findanimators[i].name == "ChangeButtons")
+                    colorChangeButtonAnimator = findanimators[i];
+            }
+
+        }
+
         eyeButtonAnimator = GetComponent<Animator>();
         colorChangeButtonAnimator = colorChangeButton.GetComponent<Animator>();
 
         //초기 오브젝트 색별로 구분
-        magentas=GameObject.FindGameObjectsWithTag("Magenta"); 
-        yellows=GameObject.FindGameObjectsWithTag("Yellow");
-        cyans=GameObject.FindGameObjectsWithTag("Cyan");
+        magentas=GameObject.FindGameObjectsWithTag("Magenta").ToList(); 
+        yellows=GameObject.FindGameObjectsWithTag("Yellow").ToList();
+        cyans=GameObject.FindGameObjectsWithTag("Cyan").ToList();
 
         //색있는 오브젝트 보이지 않게 하기
         setInvisibleColor(magentas);
@@ -44,22 +58,6 @@ public class EyeButtonAnimator : MonoBehaviour
         EyeColor_C.setSwitchActive(false);
         EyeColor_Y.setSwitchActive(false);
 
-        if (FindObjectOfType<GameManager>().IsStart) { 
-            eyeButtonAnimator = GetComponent<Animator>();
-
-            Animator[] findanimators = UISingleton.instance.transform.GetComponentsInChildren<Animator>();
-            for(int i = 0; i < findanimators.Length; i++)
-            {
-                if (findanimators[i].name == "ChangeButtons")
-                    colorChangeButtonAnimator = findanimators[i];
-            }
-
-            magentas=new List<GameObject>();
-            yellows=new List<GameObject>();
-            cyans=new List<GameObject>();
-
-            ColorReArrange(); //초기 오브젝트 설정
-        }
     }
 
     public void closeOrOpenEyeButton()
@@ -167,7 +165,7 @@ public class EyeButtonAnimator : MonoBehaviour
         EyeColor_Y.setSwitchActive(true);
     }
     
-    public void setVisible(Color nowcolor){ //특정 색을 보이게 하고, 나머지 색은 보이지 않게 함
+    void setVisible(Color nowcolor){ //특정 색을 보이게 하고, 나머지 색은 보이지 않게 함
             switch(nowcolor){
                 case Color.white :
                     setInvisibleColor(yellows);

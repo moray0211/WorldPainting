@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: monkeyspanner
   m_EditorClassIdentifier: 
   name: monkeyspanner
+  itemDef: 
   icon: {fileID: 21300000, guid: 745f7121241a21045a2cd16d2ca24b60, type: 3}
-  isItemDestroyInScene: 1
+  isItemDestroyInScene: 0
   description: []

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Kit_AfterLax
   m_EditorClassIdentifier: 
   isSwitchActiveAtFirst: 0
-  isSwitchActive: 1
+  isSwitchActive: 0
   comment: "\uC2F1\uD06C\uB300\uC5D0 \uB77D\uC2A4\uCE60\uC744 \uD568"

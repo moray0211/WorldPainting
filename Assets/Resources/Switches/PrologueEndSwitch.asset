@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PrologueEndSwitch
   m_EditorClassIdentifier: 
   isSwitchActiveAtFirst: 1
-  isSwitchActive: 0
+  isSwitchActive: 1
   comment: "\uD504\uB864\uB85C\uADF8 \uB300\uC0AC(\uBB38 \uC5F4\uACE0 \uB4E4\uC5B4\uC624\uAE30\uAE4C\uC9C0)
     \uC644\uB8CC"

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Kit_ShowPass
   m_EditorClassIdentifier: 
   isSwitchActiveAtFirst: 0
-  isSwitchActive: 1
+  isSwitchActive: 0
   comment: "\uC2F1\uD06C\uB300\uC5D0 \uB77D\uC2A4\uCE60\uD55C \uD6C4, \uC218\uC138\uBBF8\uB85C
     \uB2E6\uC544\uB0C4"

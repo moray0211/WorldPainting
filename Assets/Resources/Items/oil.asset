@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: oil
   m_EditorClassIdentifier: 
   name: oil
+  itemDef: 
   icon: {fileID: 21300000, guid: 48a216191aadb3c49a70289130589ce2, type: 3}
-  isItemDestroyInScene: 1
+  isItemDestroyInScene: 0
   description: []
