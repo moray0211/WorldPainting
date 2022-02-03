@@ -15,5 +15,5 @@ MonoBehaviour:
   name: coin
   itemDef: 
   icon: {fileID: 21300000, guid: daddd7c073885a4459515763697c2e02, type: 3}
-  isItemDestroyInScene: 1
+  isItemDestroyInScene: 0
   description: []
