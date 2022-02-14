@@ -8,7 +8,7 @@ public class CloseObjcet : MonoBehaviour
     public GameObject[] notshow; //화면을 열었을 때 보이지 않는 오브젝트
 
     public void setopen(){ //줌인, 서랍을 열 때 실행되는 함수
-        changeobj.SetActive(false);
+        if(changeobj==true) changeobj.SetActive(false);
         FindObjectOfType<EyeButtonAnimator>().ColorReArrange();
         setInactivechild();
     }

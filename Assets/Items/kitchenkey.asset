@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: kitchenkey
   m_EditorClassIdentifier: 
   name: kitchenkey
-  icon: {fileID: 21300000, guid: fe936c50ef0ff6f428616ac72c33d08a, type: 3}
+  itemDef: 
+  icon: {fileID: 21300000, guid: a5336e03fa1930d4c917b9c9dff9ca96, type: 3}
+  isItemDestroyInScene: 0
+  description: []

@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: scrubbers
   m_EditorClassIdentifier: 
   name: scrubbers
-  icon: {fileID: 21300000, guid: 131e73ca77dd2c846943e6c5e7c8c8b5, type: 3}
+  itemDef: 
+  icon: {fileID: 21300000, guid: b32245578791e28468e9b14dea12de03, type: 3}
+  isItemDestroyInScene: 0
+  description: []

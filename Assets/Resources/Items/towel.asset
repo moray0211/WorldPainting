@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: towel
   itemDef: 
-  icon: {fileID: 21300000, guid: c71c6f8b237639743835a27a7061b925, type: 3}
+  icon: {fileID: 21300000, guid: 1b8959f4202e02c4e958f045995074a7, type: 3}
   isItemDestroyInScene: 0
   description: []
