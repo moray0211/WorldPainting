@@ -219,24 +219,27 @@ public class EyeButtonAnimator : MonoBehaviour
 
         foreach (GameObject magen in GameObject.FindGameObjectsWithTag("Magenta"))
         {
-            if (magen != false && magentas.Find(o => o.name == magen.name) == false)
+            if (magen != false && magentas.Find(o => o.name == magen.name) == false&&magen.GetComponent<ItemPickup>()==true)
             {
-                magentas.Add(magen);
+                if (magen.GetComponent<ItemPickup>().item.getItemDestory() == false) magentas.Add(magen);
+                else Destroy(magen);
             }
         }
         foreach (GameObject cyan in GameObject.FindGameObjectsWithTag("Cyan"))
         {
-            if (cyan == true && cyans.Find(o => o.name == cyan.name) == false)
+            if (cyan == true && cyans.Find(o => o.name == cyan.name) == false && cyan.GetComponent<ItemPickup>() == true)
             {
-                cyans.Add(cyan);
+                if (cyan.GetComponent<ItemPickup>().item.getItemDestory() == false) cyans.Add(cyan);
+                else Destroy(cyan);
             }
         }
 
         foreach (GameObject yellow in GameObject.FindGameObjectsWithTag("Yellow"))
         {
-            if (yellows.Find(o => o.name == yellow.name) == false)
+            if (yellows.Find(o => o.name == yellow.name) == false && yellow.GetComponent<ItemPickup>() == true)
             {
-                yellows.Add(yellow);
+                if (yellow.GetComponent<ItemPickup>().item.getItemDestory() == false) yellows.Add(yellow);
+                else Destroy(yellow);
             }
         }
         setVisible(color);
@@ -246,6 +249,7 @@ public class EyeButtonAnimator : MonoBehaviour
         if(tag=="Magenta"){
             GameObject tem = magentas.Find(o => o.name == pname);
             magentas.Remove(tem);
+            Destroy(tem);
 
             tem = magentas.Find(o => o.name.Contains(pname));
             if (tem==true){
@@ -257,18 +261,19 @@ public class EyeButtonAnimator : MonoBehaviour
         {
             GameObject tem=cyans.Find(o => o.name==pname);
             cyans.Remove(tem);
-
+            Destroy(tem);
             tem = cyans.Find(o => o.name.Contains(pname));
-            if(tem==true){
+            if (tem==true){
                 cyans.Remove(cyans.Find(o => o.name==tem.name));
-                Destroy(tem);
+                Debug.Log(tem.name + "삭제");
+                Destroy(tem); 
             }
         }
         else if (tag == "Yellow")
         {
             GameObject tem = yellows.Find(o => o.name == pname);
             yellows.Remove(tem);
-
+            Destroy(tem);
             tem = yellows.Find(o => o.name.Contains(pname));
             if (tem==true){
                 yellows.Remove(yellows.Find(o => o.name==tem.name));

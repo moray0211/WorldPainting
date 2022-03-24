@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe06985073a5064ab15ac4d3336e886, type: 3}
   m_Name: scrubbers
   m_EditorClassIdentifier: 
-  name: scrubbers
-  itemDef: 
+  itemname: "\uC218\uC138\uBBF8"
+  itemDescription: "\uBB34\uC5B8\uAC00\uB97C \uB2E6\uAE30 \uC704\uD55C \uC218\uC138\uBBF8"
   icon: {fileID: 21300000, guid: b32245578791e28468e9b14dea12de03, type: 3}
   isItemDestroyInScene: 0
-  description: []

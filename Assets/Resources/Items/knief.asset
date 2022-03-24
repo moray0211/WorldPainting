@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe06985073a5064ab15ac4d3336e886, type: 3}
   m_Name: knief
   m_EditorClassIdentifier: 
-  name: knife
-  itemDef: 
+  itemname: "\uACFC\uB3C4"
+  itemDescription: "\uC5B4\uB518\uAC00\uC5D0 \uC4F0\uB294 \uACFC\uB3C4"
   icon: {fileID: 21300000, guid: 0f0acfe43dac95946afcca89f4747b02, type: 3}
-  isItemDestroyInScene: 1
-  description: []
+  isItemDestroyInScene: 0

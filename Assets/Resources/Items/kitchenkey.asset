@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe06985073a5064ab15ac4d3336e886, type: 3}
   m_Name: kitchenkey
   m_EditorClassIdentifier: 
-  name: kitchenkey
-  itemDef: 
+  itemname: "\uBD80\uC5CC\uC5F4\uC1E0"
+  itemDescription: "\uBD80\uC5CC\uC5D0\uC11C \uC5BB\uC740 \uC5F4\uC1E0"
   icon: {fileID: 21300000, guid: a5336e03fa1930d4c917b9c9dff9ca96, type: 3}
   isItemDestroyInScene: 1
-  description: []

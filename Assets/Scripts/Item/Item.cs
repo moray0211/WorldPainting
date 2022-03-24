@@ -5,12 +5,12 @@ using UnityEditor;
 public class Item : ScriptableObject
 {
 
-    new public string name = "New Item"; //이름
-    public string itemDef; //설명
+    public string itemname; //이름
+    [TextArea(3,10)]
+    public string itemDescription; //설명
     public Sprite icon = null;
     bool isItemActive = false;
     public bool isItemDestroyInScene=false;
-    public Dialogue[] description;
 
     public void setItemActive(bool active) {
         isItemActive = active;

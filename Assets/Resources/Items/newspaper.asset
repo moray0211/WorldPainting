@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe06985073a5064ab15ac4d3336e886, type: 3}
   m_Name: newspaper
   m_EditorClassIdentifier: 
-  name: Newspaper
-  itemDef: 
+  itemname: "\uC2E0\uBB38\uC870\uAC01"
+  itemDescription: "\uBD80\uC5CC\uC5D0\uC11C \uC5BB\uC740 \uC2E0\uBB38\uC870\uAC01\n\uC5B4\uB5A4
+    \uC0AC\uACE0\uAC00 \uC801\uD600\uC788\uB2E4"
   icon: {fileID: 21300000, guid: 03a64988af7a4c84eb454d692f37af80, type: 3}
   isItemDestroyInScene: 0
-  description: []

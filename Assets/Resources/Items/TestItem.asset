@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe06985073a5064ab15ac4d3336e886, type: 3}
   m_Name: TestItem
   m_EditorClassIdentifier: 
-  name: "\uD14C\uC2A4\uD2B8 \uC544\uC774\uD15C"
+  itemname: New Item
+  itemDescription: 
   icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  isItemDestroyInScene: 0

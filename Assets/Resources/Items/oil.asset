@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe06985073a5064ab15ac4d3336e886, type: 3}
   m_Name: oil
   m_EditorClassIdentifier: 
-  name: oil
-  itemDef: 
+  itemname: "\uC2DD\uC6A9\uC720"
+  itemDescription: "\uAE30\uB984\uCE60\uC744 \uD558\uAE30 \uC704\uD55C \uC2DD\uC6A9\uC720"
   icon: {fileID: 21300000, guid: d7e447af120aec34bad6680010e8bad5, type: 3}
-  isItemDestroyInScene: 0
-  description: []
+  isItemDestroyInScene: 1

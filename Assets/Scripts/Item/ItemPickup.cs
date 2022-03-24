@@ -6,7 +6,7 @@ using UnityEditor;
 public class ItemPickup : ItemInteractable
 {
     public Item item;
-    public bool destroy = false;
+    public bool IsDestroy = true;
     public bool destroy_thisComp = false;
     GameManager gameManager;
 
@@ -23,7 +23,7 @@ public class ItemPickup : ItemInteractable
         {
             Destroy(this);
         }
-        if (destroy) {
+        if (IsDestroy) {
             FindObjectOfType<EyeButtonAnimator>().deleteObject(this.name,this.tag);
             item.setItemDestory(true);
             Destroy(gameObject);

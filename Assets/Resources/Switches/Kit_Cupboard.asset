@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Kit_Cupboard
   m_EditorClassIdentifier: 
   isSwitchActiveAtFirst: 0
-  isSwitchActive: 0
+  isSwitchActive: 1
   comment: "\uBD80\uC5CC \uCC2C\uC7A5\uC744 \uC5F4\uC5C8\uC74C"

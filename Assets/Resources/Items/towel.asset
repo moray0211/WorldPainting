@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe06985073a5064ab15ac4d3336e886, type: 3}
   m_Name: towel
   m_EditorClassIdentifier: 
-  name: towel
-  itemDef: 
+  itemname: "\uC218\uAC74"
+  itemDescription: "\uC5B4\uB518\uAC00\uC5D0 \uC4F0\uB294 \uC218\uAC74"
   icon: {fileID: 21300000, guid: 1b8959f4202e02c4e958f045995074a7, type: 3}
-  isItemDestroyInScene: 0
-  description: []
+  isItemDestroyInScene: 1

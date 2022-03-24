@@ -28,8 +28,8 @@ public class ItemDefinition : MonoBehaviour, IPointerEnterHandler, IPointerExitH
                 itemDef.SetActive(true);
                 itemDef.transform.position = new Vector3(pos.position.x + 70, pos.position.y - 100, pos.position.z);
             }
-            itemNameText.text = inventorySlot.getItem().name;
-            itemDefText.text = inventorySlot.getItem().itemDef;
+            itemNameText.text = inventorySlot.getItem().itemname;
+            itemDefText.text = inventorySlot.getItem().itemDescription;
         }
 
     }
