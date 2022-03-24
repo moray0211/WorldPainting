@@ -15,5 +15,5 @@ MonoBehaviour:
   name: kitchenkey
   itemDef: 
   icon: {fileID: 21300000, guid: a5336e03fa1930d4c917b9c9dff9ca96, type: 3}
-  isItemDestroyInScene: 0
+  isItemDestroyInScene: 1
   description: []
