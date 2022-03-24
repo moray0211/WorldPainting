@@ -16,8 +16,6 @@ public class SettingActions : MonoBehaviour
     public void Gotitle()
     {
         FindObjectOfType<DataManager>().SaveGameData();
-        UISingleton.instance.gameObject.SetActive(false);
-        SingletonContainer.instance.gameObject.SetActive(false);
         SceneManager.LoadScene("TitleScene");
         Settingcanvas.SetActive(false);
     }

@@ -8,12 +8,12 @@ public class ButtonActions : MonoBehaviour
     public void StartNewGame()
     {
         FindObjectOfType<GameParameter>().IsReset = true;
-        SceneManager.LoadScene("kitchenScene");
+        SceneManager.LoadScene("LoadingScene");
     }
 
     public void ResumeGame()
     {
-        SceneManager.LoadScene("kitchenScene");
+        SceneManager.LoadScene("LoadingScene");
     }
 
     public void QuitGame()

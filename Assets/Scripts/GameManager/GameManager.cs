@@ -10,6 +10,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         DataManager = SingletonContainer.instance.GetComponentInChildren<DataManager>();
+        if (FindObjectOfType<GameParameter>() != null)
+        {
+            FindObjectOfType<GameManager>().IsReset = FindObjectOfType<GameParameter>().IsReset;
+            Destroy(FindObjectOfType<GameParameter>());
+        }
         if (IsReset)
         {
             DataManager.ResetData();
