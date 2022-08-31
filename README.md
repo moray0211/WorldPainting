@@ -5,6 +5,8 @@
   유니티 기반 2D 방탈출 게임
 </div>
 
+
+
 <!-- Contents --!>
 <h2 id="table-of-contents"> :book: 목차 </h2>
 
@@ -38,19 +40,23 @@
 
 <br><br>
 <!-- PROJECT FILES DESCRIPTION -->
-<h2 id="project-files-description"> :floppy_disk: 프로젝트 파일 (in SmileGateGameJam7/Assets/Jeong) </h2>
+<h2 id="project-files-description"> :floppy_disk: 프로젝트 파일 (in WorldPainting/Assets/Scripts/) </h2>
 
 <ul>
-  <li><b>OrderUIManager.cs</b> - Customer와 관련한 UI들을 켜고 끄는 클래스</li>
-  <li><b>RecipyBook.cs</b> - 해금된 정도에 따라 레시피 값을 불러오는 클래스 </li>
-  <li><b>ScrollRecipeView.cs</b> - 레시피북의 내용을 동적으로 다르게 불러오게 하는 클래스</li>
+  <li><b>/item</b> - 아이템을 획득하고 사용하는 등의 동작을 관리하는 부분</li>
+  <li><b>/ChangeColor</b> - 색상이 변경되면서 특정 아이템들만 보이도록 하는 부분 </li>
+  <li><b> /Dialogue</b> - 유저가 다른 캐릭터들과 대화하는 Trigger, 대화를 위한 UI 세팅들을 포함하는 부분</li>
+  <li><b> Singleton.cs </b> - 싱글톤 디자인 패턴 구현되어 있는 코드 </li>
+  
 </ul>
 
 <br><br>
 <!--TECH/FRAMEWORK-->
 <h2 id="tech/framwork-used"> 🛠 기술 / 프레임워크</h2>
 
-C#, Unity
+![C Sharp](https://img.shields.io/badge/C%23-green?style=for-the-badge&logo=CSharp&logoColor=white)
+![Unity](https://img.shields.io/badge/Unity-000000?style=for-the-badge&logo=Unity&logoColor=white)
+
 
 <br><br>
 <!--SCREENSHOT-->
