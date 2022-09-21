@@ -5,17 +5,26 @@ using UnityEngine;
 public class BGMManager : Singleton<BGMManager>
 {
     public AudioSource audioSource;
-    public AudioClip audioClip;
+    public AudioClip CurrentAudioClip;
+    public AudioClip[] ThemeClip;
 
-    public void changeAudioClip(AudioClip ac)
+    void changeAudioClip(AudioClip ac)
     {
-        audioClip = ac;
+        if (audioSource.isPlaying) audioSource.Stop();
+        CurrentAudioClip = ac;
+        audioSource.clip = CurrentAudioClip;
+        audioSource.Play();
     }
 
     public void playAudioClip()
     {
         if (audioSource.isPlaying) audioSource.Stop();
         audioSource.Play();
+    }
+
+    public void PlayTheme(int themeNumber)
+    {
+        changeAudioClip(ThemeClip[themeNumber]);
     }
 
 }

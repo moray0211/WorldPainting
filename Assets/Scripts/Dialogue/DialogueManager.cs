@@ -12,6 +12,8 @@ public class DialogueManager : MonoBehaviour
     public List<Sprite> NameboxImages;
     public List<Sprite> White_StandingCG;
     public List<Sprite> Magenta_StandingCG;
+    public List<Sprite> Cyan_StandingCG;
+    public List<Sprite> Yellow_StandingCG;
     enum DialogueType
     {
         narration,
@@ -43,11 +45,13 @@ public class DialogueManager : MonoBehaviour
     struct Types //Dialogue.cs의 Sentences클래스와 동일한 구성
     {
         public Dialogue.Type type;
+        public Dialogue.EmotionType emotionType;
         public Dialogue.ChoiceType choiceType;
         public Sprite standingCG;
         public AudioClip audioClip;
     }
 
+    Dictionary<string, Dialogue> DialogueDictionary;
     Queue<KeyValuePair<string, Types>> sentences;
 
     public bool inConversation = false;
@@ -73,9 +77,15 @@ public class DialogueManager : MonoBehaviour
         choicePanel2.SetActive(false);
         choicePanel3.SetActive(false);
         sentences = new Queue<KeyValuePair<string, Types>>();
+        DialogueDictionary = new Dictionary<string, Dialogue>();
 
         if (GameObject.Find("ItemsParent") != null)
         { buttons = GameObject.Find("ItemsParent").GetComponentsInChildren<Button>();}
+
+        foreach(Dialogue DL in Resources.LoadAll("Dialogue"))
+        {
+            DialogueDictionary.Add(DL.name, DL);
+        }
 
     }
 
@@ -112,6 +122,9 @@ public class DialogueManager : MonoBehaviour
 
     DialogueTrigger.SwitchOnOffInf switchOnOffInf;
     //대화 시작시 호출
+
+
+
     public void StartDialogue (Dialogue dialogue, DialogueTrigger.SwitchOnOffInf switchOnOffInf, bool destroyTriggerComp = false, DialogueTrigger dialogueTrigger = null)
     {
 
@@ -139,6 +152,7 @@ public class DialogueManager : MonoBehaviour
                     Types tmp;
                     tmp.type = dialogue.character[i].type;
                     tmp.choiceType = dialogue.character[i].choiceType;
+                    tmp.emotionType = dialogue.character[i].emotionType;
                     tmp.standingCG = dialogue.character[i].standingCG;
                     tmp.audioClip = dialogue.character[i].audioClip;
 
@@ -149,17 +163,67 @@ public class DialogueManager : MonoBehaviour
             //대사 시작
             inConversation = true;
             if(dialogue.character.Length >=1) DisplayNextSentence();
-
+          
         }
 
     }
 
+    public void StartDialogueWithDialogueID(string dialogueName)
+    {
+        //ID로만 대화를 시작함
+        this.destroyTriggerComp = false;
+        this.dialogueTrigger = null;
+
+        //이미 대화를 하고 있는 경우가 아니라면
+        if (!inConversation)
+        {
+            //대사가 끝난 뒤 on될 스위치 설정
+            if (switchOnOffInf.offSwitchAfterDlg != null ||
+                switchOnOffInf.onSwitchAfterDlg != null)
+            {
+                //this.switchOnOffInf = switchOnOffInf.offSwitchAfterDlg;
+            }
+
+            //대사 시작 전 초기화
+            sentences.Clear();
+
+            if (DialogueDictionary.ContainsKey(dialogueName))
+            {
+                Dialogue dialogue = DialogueDictionary[dialogueName];
+                
+                for (int i = 0; i < dialogue.character.Length; i++)
+                {
+                    for (int j = 0; j < dialogue.character[i].sentences.Length; j++)
+                    {
+                        Types tmp;
+                        tmp.type = dialogue.character[i].type;
+                        tmp.choiceType = dialogue.character[i].choiceType;
+                        tmp.emotionType = dialogue.character[i].emotionType;
+                        tmp.standingCG = dialogue.character[i].standingCG;
+
+                        if (j == 0) { tmp.audioClip = dialogue.character[i].audioClip; }
+                        else tmp.audioClip = null;
+
+                        sentences.Enqueue(new KeyValuePair<string, Types>
+                            (dialogue.character[i].sentences[j], tmp));
+                        
+                    }
+                }
+                //대사 시작
+                inConversation = true;
+                if (dialogue.character.Length >= 1) DisplayNextSentence();
+                dialogueCanvas.SetActive(true);
+
+            }else { Debug.LogWarning("Warning in DialogueManager : 없는 대화 호출"); }
+
+            
+
+        }
+    }
     public void DisplayNextSentence()
     {
-
         if (sentences.Count == 0)
         {
-
             EndConversation();
             return;
         }
@@ -172,7 +236,17 @@ public class DialogueManager : MonoBehaviour
 
             Dialogue.ChoiceType choiceType = sentences.Peek().Value.choiceType;
             Dialogue.Type type = sentences.Peek().Value.type;
+            Dialogue.EmotionType emotionType = sentences.Peek().Value.emotionType;
             AudioClip audioClip = sentences.Peek().Value.audioClip;
+
+            int SpriteNum = 0;
+            if(emotionType == Dialogue.EmotionType.idle)
+            {
+                SpriteNum = 0;
+            }else if(emotionType == Dialogue.EmotionType.smile)
+            {
+                SpriteNum = 6;
+            }
 
             //캐릭터별 대화창 설정
             if (type == Dialogue.Type.narration)
@@ -180,7 +254,7 @@ public class DialogueManager : MonoBehaviour
                 //DialoguePanel.GetComponent<Image>().sprite = narration_box;
                 Namebox.sprite = NameboxImages[0];
                 NameText.text = "<color=#103051>화이트</color>";
-                standigCGImage.sprite = White_StandingCG[0];
+                standigCGImage.sprite = White_StandingCG[SpriteNum];
             };
 
             if (type == Dialogue.Type.magenta)
@@ -188,10 +262,24 @@ public class DialogueManager : MonoBehaviour
                 //DialoguePanel.GetComponent<Image>().sprite = magenta_box;
                 Namebox.sprite = NameboxImages[1];
                 NameText.text = "<color=#e8338e>마젠타</color>";
-                standigCGImage.sprite = Magenta_StandingCG[0];
+
+                standigCGImage.sprite = Magenta_StandingCG[SpriteNum];
             }
-            if (type == Dialogue.Type.cyan) DialoguePanel.GetComponent<Image>().sprite = cyan_box;
-            if (type == Dialogue.Type.yellow) DialoguePanel.GetComponent<Image>().sprite = yellow_box;
+            if (type == Dialogue.Type.cyan)
+            {
+
+                Namebox.sprite = NameboxImages[2];
+                NameText.text = "<color=#103051>시안</color>";
+                standigCGImage.sprite = Cyan_StandingCG[SpriteNum];
+                DialoguePanel.GetComponent<Image>().sprite = cyan_box;
+            }
+            if (type == Dialogue.Type.yellow)
+            {
+                Namebox.sprite = NameboxImages[3];
+                NameText.text = "<color=#5f4d0e>옐로우</color>";
+                standigCGImage.sprite = Yellow_StandingCG[SpriteNum];
+                DialoguePanel.GetComponent<Image>().sprite = yellow_box;
+            }
             if (type == Dialogue.Type.black) DialoguePanel.GetComponent<Image>().sprite = black_box;
             if (type == Dialogue.Type.etc) DialoguePanel.GetComponent<Image>().sprite = none_box;
 
@@ -388,7 +476,12 @@ public class DialogueManager : MonoBehaviour
 
         }
 
+        //다음 이벤트로 넘어가게 하기
+        FindObjectOfType<EventManager>().RunAfterEvent();
+
+
         inConversation = false;
+        //단발성 대화의 경우
         if (destroyTriggerComp && dialogueTrigger!=null) Destroy(dialogueTrigger);
         Debug.Log("End conversation");
     }

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fe06985073a5064ab15ac4d3336e886, type: 3}
+  m_Name: ITEM_Kit_oil
+  m_EditorClassIdentifier: 
+  itemname: "\uC2DD\uC6A9\uC720"
+  itemDescription: "\uAE30\uB984\uCE60\uC744 \uD558\uAE30 \uC704\uD55C \uC2DD\uC6A9\uC720"
+  icon: {fileID: 21300000, guid: d7e447af120aec34bad6680010e8bad5, type: 3}
+  isItemDestroyInScene: 0

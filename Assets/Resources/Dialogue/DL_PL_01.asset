@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71cc166e2d85034d9cdbc9cc9d2e0f7, type: 3}
+  m_Name: DL_PL_01
+  m_EditorClassIdentifier: 
+  D_id: DL_PL_01
+  character:
+  - type: 0
+    choiceType: 0
+    choices: []
+    standingCG: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: cffb02f000644814ea0cc69fd46e60a4, type: 3}
+    sentences:
+    - "\u2026? \uC5EC\uAE30 \uC774 \uBC29\uC774 \uB9DE\uB098?"
+    - "\uB0B4\uAC00 \uACC4\uC57D\uD55C \uBC29\uC740 \uC6D0\uB8F8\uC778\uB370 \uC5EC\uAE34\u2026"
+  - type: 0
+    choiceType: 0
+    choices: []
+    standingCG: {fileID: 21300000, guid: 9397a6cd8790106468fa865f24bb49d4, type: 3}
+    audioClip: {fileID: 8300000, guid: 7325ed98b84e6404aba51918bff78010, type: 3}
+    sentences:
+    - "(\uBB38\uC744 \uC5F4\uC5B4\uBCF4\uC9C0\uB9CC \uC5F4\uB9AC\uC9C0 \uC54A\uB294\uB2E4)"
+    - "\uC5B4? \uC65C \uC548 \uC5F4\uB9AC\uC9C0?"
+    - "\uC77C\uB2E8 \uD578\uB4DC\uD3F0\uC744\u2026"
+    - "(\uBD84\uBA85\uD788 \uC644\uCDA9 \uC2DC\uCF1C\uB1A8\uC744\uD150\uB370 \uC774\uC0C1\uD558\uAC8C\uB3C4
+      \uD578\uB4DC\uD3F0\uC774 \uCF1C\uC9C0\uC9C0 \uC54A\uC558\uB2E4)"
+    - "\uD578\uB4DC\uD3F0\uAE4C\uC9C0 \uC65C\uC774\uB798\u2026"
+    - "\uC5B4\uB5A1\uD558\uC9C0?"
+    - "(\uC5B4\uCA54 \uC218 \uC5C6\uC774 \uC9D1 \uC548\uC744 \uB458\uB7EC\uBD10\uC57C
+      \uD560 \uAC83 \uAC19\uB2E4)"

@@ -111,7 +111,7 @@ public class DataManager : MonoBehaviour
     public void ResetALLItems()
     {
         object[] items = Resources.LoadAll("Items");
-        Debug.Log(items.Length + "개의 아이템 리셋");
+        //Debug.Log(items.Length + "개의 아이템 리셋");
         for (int i = 0; i < items.Length; i++)
         {
             Item tem = items[i] as Item;

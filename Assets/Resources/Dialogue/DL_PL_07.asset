@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71cc166e2d85034d9cdbc9cc9d2e0f7, type: 3}
+  m_Name: DL_PL_07
+  m_EditorClassIdentifier: 
+  D_id: 
+  character:
+  - type: 3
+    emotionType: 6
+    choiceType: 0
+    choices: []
+    standingCG: {fileID: 0}
+    audioClip: {fileID: 0}
+    sentences:
+    - "\uC6B0\uC640 \uC0AC\uB78C\uC774\uB2E4!! \uC815\uB9D0 \uC624\uB79C\uB9CC\uC5D0
+      \uBD10\uC694!"
+    - "\uB204\uAD6C\uC5D0\uC694? \uBC16\uC5D0\uC11C \uC654\uC5B4\uC694?"
+  - type: 0
+    emotionType: 0
+    choiceType: 0
+    choices: []
+    standingCG: {fileID: 0}
+    audioClip: {fileID: 0}
+    sentences:
+    - "\uC5B4\u2026\uC751."
+  - type: 3
+    emotionType: 0
+    choiceType: 0
+    choices: []
+    standingCG: {fileID: 0}
+    audioClip: {fileID: 0}
+    sentences:
+    - "\uC88B\uACA0\uB2E4~ \uB098\uB294 \uC5EC\uAE30\uC11C \uBABB\uB098\uAC00\uAC70\uB4E0\uC694."
+  - type: 0
+    emotionType: 0
+    choiceType: 0
+    choices: []
+    standingCG: {fileID: 0}
+    audioClip: {fileID: 0}
+    sentences:
+    - "\u2026\uC65C \uBABB\uB098\uAC00\uB294\uB370?"
+  - type: 3
+    emotionType: 0
+    choiceType: 0
+    choices: []
+    standingCG: {fileID: 0}
+    audioClip: {fileID: 0}
+    sentences:
+    - "\uBAB0\uB77C\uC694! \uADF8\uB0E5 \uB098\uAC08\uC218\uAC00 \uC5C6\uB294\uB370
+      \uC5B4\uB5A1\uD574\uC694."
+  - type: 3
+    emotionType: 6
+    choiceType: 0
+    choices: []
+    standingCG: {fileID: 0}
+    audioClip: {fileID: 0}
+    sentences:
+    - "\uADF8\uB7FC \uC5B4\uCA54 \uC218 \uC5C6\uC774 \uADF8\uB9BC\uC774\uB098 \uADF8\uB824\uC57C\uC8E0."
+  - type: 3
+    emotionType: 0
+    choiceType: 0
+    choices: []
+    standingCG: {fileID: 0}
+    audioClip: {fileID: 0}
+    sentences:
+    - "\uADFC\uB370 \uC0C9\uC774 \uC774\uAC70 \uD558\uB098\uBC16\uC5D0 \uC5C6\uC5B4\uC11C
+      \uADF8\uB9AC\uB294 \uB9DB\uC774 \uC5C6\uC5B4\uC694! \uC5D0\uD734!"
+    - "\uC544\uC774\uB294 \uADF8\uB807\uAC8C \uB9D0\uD558\uACE0\uC120 \uB2E4\uC2DC
+      \uADF8\uB9BC\uADF8\uB9AC\uAE30\uC5D0 \uC9D1\uC911\uD588\uB2E4."

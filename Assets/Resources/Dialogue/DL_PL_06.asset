@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71cc166e2d85034d9cdbc9cc9d2e0f7, type: 3}
+  m_Name: DL_PL_06
+  m_EditorClassIdentifier: 
+  D_id: 
+  character:
+  - type: 1
+    emotionType: 6
+    choiceType: 0
+    choices: []
+    standingCG: {fileID: 0}
+    audioClip: {fileID: 0}
+    sentences:
+    - "\uC5B4\uBA38 \uC598, \uB10C \uC5B4\uB514\uC11C \uC654\uB2C8?\n\uC624\uB79C\uB9CC\uC5D0
+      \uB204\uAD70\uAC00\uB97C \uBCF4\uB2C8 \uB108\uBB34 \uBC18\uAC00\uC6B4\uAC78!"
+    - "\uC774\uACF3\uC5D0 \uD63C\uC790\uB9CC \uC788\uC5C8\uB354\uB2C8 \uC5BC\uB9C8\uB098
+      \uC9C0\uB8E8\uD588\uB294\uC9C0 \uBAB0\uB77C!\n\uB0B4\uAC00 \uB204\uAD6C\uC600\uB294\uC9C0,
+      \uC65C \uC5EC\uAE30\uC5D0 \uC788\uB294\uC9C0\uB3C4 \uB2E4 \uC78A\uC5B4\uBC84\uB838\uC9C0
+      \uBB50\uB2C8."
+  - type: 0
+    emotionType: 0
+    choiceType: 0
+    choices: []
+    standingCG: {fileID: 0}
+    audioClip: {fileID: 0}
+    sentences:
+    - "\u2026?"
+    - "\uC9C4\uC9DC \uD558\uB098\uB3C4 \uAE30\uC5B5 \uC548\uB098\uC138\uC694?"
+  - type: 1
+    emotionType: 6
+    choiceType: 0
+    choices: []
+    standingCG: {fileID: 0}
+    audioClip: {fileID: 0}
+    sentences:
+    - "\uB0B4\uAC00 \uB108\uAC19\uC740 \uC560\uD55C\uD14C \uAC70\uC9D3\uB9D0\uC774\uB098
+      \uD574\uC11C \uBB50\uD558\uACA0\uB2C8.\n\uC815\uB9D0 \uBAA8\uB974\uACA0\uB2E4\uB2C8\uAE4C?"
+  - type: 0
+    emotionType: 0
+    choiceType: 0
+    choices: []
+    standingCG: {fileID: 0}
+    audioClip: {fileID: 0}
+    sentences:
+    - "\uAE30\uC5B5\uC774 \uC804\uD600 \uC548\uB098\uB294\uB370 \uC5B4\uB5BB\uAC8C
+      \uC800\uB9AC \uD0DC\uC5F0\uD560 \uC218 \uC788\uB294\uC9C0 \uBAA8\uB974\uACA0\uB2E4."
+    - "\uC624\uD788\uB824 \uAE30\uC5B5\uC774 \uC548\uB098\uB2C8\uAE4C \uD0DC\uC5F0\uD560
+      \uC218 \uC788\uB294\uAC78\uAE4C?"
+  - type: 1
+    emotionType: 0
+    choiceType: 0
+    choices: []
+    standingCG: {fileID: 0}
+    audioClip: {fileID: 0}
+    sentences:
+    - "\uADF8\uB098\uC800\uB098 \uC815\uB9D0 \uC911\uC694\uD55C \uAC83\uB4E4\uB3C4
+      \uC78A\uC5B4\uBC84\uB9B0 \uAC83 \uAC19\uC544\uC11C \uB9D0\uC774\uC57C."

@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public enum InGamePos {
+        Front,
+        Library,
+        Kitchen,
+        Badroom,
+        Bathroom
+    };
+
+    public InGamePos userPos=InGamePos.Front;
+
     public bool IsStart = true;
     public bool IsReset = false;
     DataManager DataManager;
