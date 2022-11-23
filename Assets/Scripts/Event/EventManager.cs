@@ -6,7 +6,6 @@ using UnityEditor;
 public class EventManager : MonoBehaviour
 {
     Queue<Event> EventQueue = new Queue<Event>();
-    public GameObject[] CharacterObjects;
 
     Event CurrenEvent;
     bool IsInEvent = false; //이벤트 진행중이면 true
@@ -22,7 +21,8 @@ public class EventManager : MonoBehaviour
 
     private void Update()
     {
-        if(EventQueue.Count>0 && EventQueue.Peek() != null && !IsInEvent && CurrenEvent.IsRunable() && !FindObjectOfType<DialogueManager>().inConversation)
+        if(EventQueue.Count>0 && EventQueue.Peek() != null && !IsInEvent 
+            && CurrenEvent.IsRunable() && !FindObjectOfType<DialogueManager>().inConversation)
         { //계속해서 제일 앞의 이벤트 Listen
             Debug.Log("이벤트 시작 , " + CurrenEvent.name);
             IsInEvent = true;
@@ -31,12 +31,13 @@ public class EventManager : MonoBehaviour
     }
 
 
+    //다음 이벤트로 넘어가는 코드
     void ProcessEvent()
     {
         if(EventQueue.Count > 0)
         {
             EventQueue.Peek().EndEventAction();
-            EditorUtility.SetDirty(EventQueue.Peek());
+            //EditorUtility.SetDirty(EventQueue.Peek());
             EventQueue.Peek();
             EventQueue.Dequeue();
             if(EventQueue.Count > 0)    CurrenEvent = EventQueue.Peek(); //다음 이벤트 픽
@@ -44,10 +45,10 @@ public class EventManager : MonoBehaviour
         }
     }
 
-
+    //대화나 외부 설정 조작이 끝난 후 다음 이벤트로 넘어가는 함수
     public void RunAfterEvent()
     {
-        //이벤트 실행중이면 다음 이벤트로 넘어가는 함수
+        //이벤트 실행중이면 다음 이벤트로 넘어감
         if(IsInEvent) ProcessEvent();
     }
 }

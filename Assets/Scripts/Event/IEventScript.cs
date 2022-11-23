@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IEventScript : MonoBehaviour
 {
-    public string EventName; //이름
+    public string EventName; //이벤트 이름
 
     private void Start()
     {
@@ -19,6 +19,10 @@ public class IEventScript : MonoBehaviour
     public virtual void EndEvent()
     {
         //이벤트가 끝날 때 후처리하는 코드
-        GameObject.FindObjectOfType<EventManager>().RunAfterEvent();
+    }
+
+    public void PasteValue<T>(T orgin, T datavalue)
+    {
+        orgin = datavalue;
     }
 }

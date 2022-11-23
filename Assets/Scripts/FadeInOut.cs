@@ -33,7 +33,6 @@ public class FadeInOut : MonoBehaviour
     bool haveSpriteRenderer;
     IEnumerator FadeIn()
     {
-        this.gameObject.SetActive(true);
         Color color;
         if (!(this.gameObject.GetComponent<SpriteRenderer>() != null)) haveSpriteRenderer = false;
         if (haveSpriteRenderer)
@@ -66,10 +65,6 @@ public class FadeInOut : MonoBehaviour
             this.gameObject.GetComponent<Image>().color
                 = new Color(color.r, color.g, color.b, 1);
         }
-
-        
-
-        //StartCoroutine("FadeWait");
     }
 
     IEnumerator FadeOut()
@@ -108,8 +103,6 @@ public class FadeInOut : MonoBehaviour
             this.gameObject.GetComponent<Image>().color
                 = new Color(color.r, color.g, color.b, 0);
         }
-
-        this.gameObject.SetActive(false);
 
         if (gameObject.name == "Logo")
         {

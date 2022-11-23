@@ -54,6 +54,7 @@ public class DataManager : MonoBehaviour
             string FromJsonData = File.ReadAllText(filePath);
             _gameData = JsonUtility.FromJson<GameData>(FromJsonData);
             LoadInventoryData();
+            LoadCharacterActiveData();
         }
         else
         {
@@ -81,6 +82,16 @@ public class DataManager : MonoBehaviour
         {
             Inventory.instance.Add(_gameData.inventory_items[i]);
         }
+    }
+    public void LoadCharacterActiveData()
+    {
+        CharacterVisibleManager CVM = FindObjectOfType<CharacterVisibleManager>();
+        bool[] _IsActive = { false, false, false };
+        for (int i = 0; i < _gameData.IsActive.Length; i++)
+        {
+            _IsActive[i] = _gameData.IsActive[i];
+        }
+        CVM.IsActive = _IsActive;
     }
 
     private void OnApplicationQuit()

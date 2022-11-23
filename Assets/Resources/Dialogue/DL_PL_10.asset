@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71cc166e2d85034d9cdbc9cc9d2e0f7, type: 3}
+  m_Name: DL_PL_10
+  m_EditorClassIdentifier: 
+  D_id: 
+  character:
+  - type: 3
+    emotionType: 6
+    choiceType: 0
+    choices: []
+    standingCG: {fileID: 0}
+    audioClip: {fileID: 0}
+    sentences:
+    - "\uC5B4! \uD06C\uB808\uD30C\uC2A4\uB2E4!"
+    - "\uACE0\uB9C8\uC6CC\uC694! \uC5B4\uCA4C\uB2E4\uBCF4\uB2C8 \uD06C\uB808\uD30C\uC2A4\uAC00
+      \uC5EC\uAE30 \uB4E4\uC5B4\uAC14\uB294\uB370\r\n\uC11C\uB78D\uC774 \uC548 \uC5F4\uB824\uC11C
+      \uC2AC\uD390\uAC70\uB4E0\uC694!"
+  - type: 3
+    emotionType: 0
+    choiceType: 0
+    choices: []
+    standingCG: {fileID: 0}
+    audioClip: {fileID: 0}
+    sentences:
+    - "\uADFC\uB370 \uC81C\uAC00 \uB354 \uCC3E\uACE0 \uC788\uB294 \uAC8C \uC788\uB294\uB370\uC694,
+      \uBB54\uC9C0 \uAE30\uC5B5\uC774 \uC548\uB098\uC694."
+    - "\uB3C4\uC640\uC904 \uC218 \uC788\uC5B4\uC694?"

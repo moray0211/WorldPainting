@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EventName: EV_PL_01
   EventDescription: "\uAC00\uC7A5 \uCC98\uC74C \uBC1C\uC0DD\uD558\uB294 \uC774\uBCA4\uD2B8"
-  IsComplete: 1
+  IsComplete: 0
   ReqSwitch: []
   EventAction: {fileID: 1182983356401524322, guid: f1ffad1d0d8f98249ab59357857fe5a4,
     type: 3}

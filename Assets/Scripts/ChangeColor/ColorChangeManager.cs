@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class ColorChangeManager : MonoBehaviour
 {
     public GameObject[] EyeButtonMCY;
-    bool[] EyeButtonLock = { true, true, true }; //초기 시야 잠금
+    bool[] EyeButtonLock = { false, false, false }; //초기 시야 잠금
     GameObject[] changes;
     int color=0;
     void Start()
     {
         for (int i = 0; i < 3; i++) {
-            if (EyeButtonLock[i]) EyeButtonMCY[i].SetActive(false);
+            if (!EyeButtonLock[i]) EyeButtonMCY[i].SetActive(false);
             else EyeButtonMCY[i].SetActive(true);
         }
 
@@ -36,6 +36,7 @@ public class ColorChangeManager : MonoBehaviour
     public void UnLockColor(int colorNum)
     { //색깔 잠금 해제 (MCY : 012)
         EyeButtonLock[colorNum] = true;
+        EyeButtonMCY[colorNum].SetActive(true);
     }
 
 }

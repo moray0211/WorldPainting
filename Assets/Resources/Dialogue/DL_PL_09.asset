@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71cc166e2d85034d9cdbc9cc9d2e0f7, type: 3}
+  m_Name: DL_PL_09
+  m_EditorClassIdentifier: 
+  D_id: 
+  character:
+  - type: 3
+    emotionType: 0
+    choiceType: 0
+    choices: []
+    standingCG: {fileID: 0}
+    audioClip: {fileID: 0}
+    sentences:
+    - "(\uC544\uC774\uB294 \uADF8\uB807\uAC8C \uB9D0\uD558\uACE0\uC120 \uB2E4\uC2DC
+      \uADF8\uB9BC\uADF8\uB9AC\uAE30\uC5D0 \uC9D1\uC911\uD588\uB2E4)"

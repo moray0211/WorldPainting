@@ -65,3 +65,11 @@ MonoBehaviour:
     sentences:
     - "\uADF8\uB098\uC800\uB098 \uC815\uB9D0 \uC911\uC694\uD55C \uAC83\uB4E4\uB3C4
       \uC78A\uC5B4\uBC84\uB9B0 \uAC83 \uAC19\uC544\uC11C \uB9D0\uC774\uC57C."
+  - type: 1
+    emotionType: 6
+    choiceType: 0
+    choices: []
+    standingCG: {fileID: 0}
+    audioClip: {fileID: 0}
+    sentences:
+    - "\uD639\uC2DC \uB124\uAC00 \uBB50\uB77C\uB3C4 \uCC3E\uC73C\uBA74 \uC54C\uB824\uC8FC\uB834."

@@ -207,22 +207,23 @@ public class EyeButtonAnimator : MonoBehaviour
         }
     }
 
+    //색상 리스트 재설정하는 함수
     public void ColorReArrange()
     {
         FindObjectOfType<ColorChangeManager>().changeColor(); //배경색 다시적용
-        setVisibleColor(yellows);
+        setVisibleColor(yellows); //모든 색상을 보이게 한 후 리스트를 재설정해줌
         setVisibleColor(cyans);
         setVisibleColor(magentas);
         magentas.Clear();
         cyans.Clear();
         yellows.Clear();
 
-        foreach (GameObject magen in GameObject.FindGameObjectsWithTag("Magenta"))
+        foreach (GameObject magen in GameObject.FindGameObjectsWithTag("Magenta")) //마젠타 태그를 가진 오브젝트 모두 저장
         {
             if (magen != false && magentas.Find(o => o.name == magen.name) == false&&magen.GetComponent<ItemPickup>()==true)
             {
-                if (magen.GetComponent<ItemPickup>().item.getItemDestory() == false) magentas.Add(magen);
-                else Destroy(magen);
+                if (magen.GetComponent<ItemPickup>().item.getItemDestory() == false) magentas.Add(magen);  
+                else Destroy(magen); //그 오브젝트가 아이템을 이미 얻고 삭제될 오브젝트라면 삭제해줌
             }
         }
         foreach (GameObject cyan in GameObject.FindGameObjectsWithTag("Cyan"))
@@ -245,12 +246,15 @@ public class EyeButtonAnimator : MonoBehaviour
         setVisible(color);
     }
 
+
+    //특정 아이템을 획득하는 등 삭제해야 할 때, 그 아이템의 이름 pname과 색상 tag를 받아 색상 리스트에서 삭제해줌
     public void deleteObject(string pname,string tag){
-        if(tag=="Magenta"){
-            GameObject tem = magentas.Find(o => o.name == pname);
+        if(tag=="Magenta"){ //색상 마젠타라면
+            GameObject tem = magentas.Find(o => o.name == pname); //리스트에서 그 오브젝트를 찾아 삭제
             magentas.Remove(tem);
             Destroy(tem);
 
+            //그 아이템의 이름을 가진 오브젝트가 여러 개일 수 있음 (확대, 축소 시의 오브젝트 분리로 인함)
             tem = magentas.Find(o => o.name.Contains(pname));
             if (tem==true){
                 magentas.Remove(magentas.Find(o => o.name==tem.name));

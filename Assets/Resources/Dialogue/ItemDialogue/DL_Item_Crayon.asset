@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71cc166e2d85034d9cdbc9cc9d2e0f7, type: 3}
+  m_Name: DL_Item_Crayon
+  m_EditorClassIdentifier: 
+  D_id: 
+  character:
+  - type: 0
+    emotionType: 0
+    choiceType: 0
+    choices: []
+    standingCG: {fileID: 0}
+    audioClip: {fileID: 0}
+    sentences:
+    - "\uD68C\uC0C9 \uD06C\uB808\uD30C\uC2A4\uB97C \uC5BB\uC5C8\uB2E4"

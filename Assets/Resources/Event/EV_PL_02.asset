@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EventName: YellowShowup
   EventDescription: "\uC804\uC9C0 \uC0AC\uC6A9"
-  IsComplete: 1
+  IsComplete: 0
   ReqSwitch:
   - {fileID: 11400000, guid: 45c8a33cf7b7619438a65f252c61cdc8, type: 2}
   EventAction: {fileID: 576211284449071359, guid: e6346cbe6b03c614281c36f33cdece88,

@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 456627000459303347}
   - component: {fileID: 1320257233308924712}
+  - component: {fileID: 5324267642510300115}
+  - component: {fileID: -9219924340019851708}
   m_Layer: 0
   m_Name: EV_PL_03_Prefab
   m_TagString: Untagged
@@ -48,3 +50,52 @@ MonoBehaviour:
     type: 2}
   YellowTargetDialgoue: {fileID: 11400000, guid: a87f21305e7452747ba315b6e4732f61,
     type: 2}
+  YellowBaseDialgoue: {fileID: 11400000, guid: 8d1519a31dfa60543896aa72df93c640, type: 2}
+  MagentaBaseDialgoue: {fileID: 11400000, guid: 5f2c4d39c295d444489a7edeb21f30af,
+    type: 2}
+  YellowItemInteractionObject: {fileID: 5324267642510300115}
+  MagentaItemInteractionObject: {fileID: -9219924340019851708}
+  BellSound: {fileID: 8300000, guid: 12f41c4c04c29fb4bb78b2d89a7d10d6, type: 3}
+  tickSound: {fileID: 8300000, guid: b06c38808da14db48b0c06dcdb75da1e, type: 3}
+--- !u!114 &5324267642510300115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576211284449071359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34934ed6ee1f1349992fc4f15985c0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableItem: {fileID: 11400000, guid: ea83b8ce4a1994841beb8c6a78a4f48b, type: 2}
+  destroyObject: 0
+  destroyItem: 1
+  isTriggerDiaglogue: 1
+  dialogue: {fileID: 11400000, guid: 843f9beb48bc9864eb7b69cd005ee593, type: 2}
+  reqSwitch: []
+  onSwitchAfterInteract:
+  - {fileID: 11400000, guid: 9beaf1a29d1d1dd4eac11a6dda3e7ae8, type: 2}
+  comment: "\uC0C1\uD638\uC791\uC6A9 \uC124\uBA85 \uC8FC\uC11D"
+--- !u!114 &-9219924340019851708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576211284449071359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34934ed6ee1f1349992fc4f15985c0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableItem: {fileID: 11400000, guid: 476bed5acca94f542aaebae165e597c2, type: 2}
+  destroyObject: 0
+  destroyItem: 1
+  isTriggerDiaglogue: 1
+  dialogue: {fileID: 11400000, guid: f5e25cdb2cb9d4240864363c27b1ac36, type: 2}
+  reqSwitch: []
+  onSwitchAfterInteract:
+  - {fileID: 11400000, guid: fb8fce9fb5ae53042ac80167205bca73, type: 2}
+  comment: "\uC0C1\uD638\uC791\uC6A9 \uC124\uBA85 \uC8FC\uC11D"

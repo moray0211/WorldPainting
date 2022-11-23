@@ -16,7 +16,7 @@ public class ClickToChangeScene : ItemInteractable
             FindObjectOfType<GameManager>().IsStart = false;
             //SE 재생
             if (audioClip != null) GameObject.Find("SEManager").GetComponent<SEManager>().playAudioClip(audioClip);
-            SceneManager.LoadScene(sceneName);
+            FindObjectOfType<VisualEffectManager>().ChangeSceneFadeInOut(sceneName);
         }
     }
 }
