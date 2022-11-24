@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SW_PL_YellowShowup
   m_EditorClassIdentifier: 
   isSwitchActiveAtFirst: 0
-  isSwitchActive: 1
+  isSwitchActive: 0
   comment: "\uC2A4\uC704\uCE58 \uC124\uBA85 \uC8FC\uC11D"

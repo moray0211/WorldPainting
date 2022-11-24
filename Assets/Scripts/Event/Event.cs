@@ -13,8 +13,14 @@ public class Event : ScriptableObject
 
     public Switch[] ReqSwitch; //이벤트를 실행하기 위해 필요한 조건
 
+    [SerializeField]
     public GameObject EventAction; // 이벤트 조건이 달성되면 실행할 코드 Prefab
     GameObject EventActionObject; // 생성할 Prefab을 담은 오브젝트
+
+    Event()
+    {
+
+    }
     public bool IsRunable()
     {
         foreach (Switch s in ReqSwitch)

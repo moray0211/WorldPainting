@@ -15,4 +15,4 @@ MonoBehaviour:
   itemname: "\uC804\uC9C0"
   itemDescription: "\uC804\uC9C0"
   icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  isItemDestroyInScene: 1
+  isItemDestroyInScene: 0
