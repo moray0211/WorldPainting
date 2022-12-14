@@ -495,6 +495,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 232484058351343729, guid: 5f22ad7550f29ab4582a9fc79539a945,
+        type: 3}
+      propertyPath: AudioClipArray.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 232484058351343729, guid: 5f22ad7550f29ab4582a9fc79539a945,
+        type: 3}
+      propertyPath: AudioClipArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: fe8186c4730813140ace1a789cd21073, type: 3}
     - target: {fileID: 232484058421031701, guid: 5f22ad7550f29ab4582a9fc79539a945,
         type: 3}
       propertyPath: m_AnchorMax.y

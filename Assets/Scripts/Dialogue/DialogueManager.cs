@@ -101,7 +101,7 @@ public class DialogueManager : MonoBehaviour
                 inTyping = false;
                 return;
             }
-            
+            FindObjectOfType<SEManager>().playAudioCilp("CLICK");
             DisplayNextSentence();
 
         }
